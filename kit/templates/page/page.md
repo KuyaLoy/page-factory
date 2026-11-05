@@ -4,43 +4,46 @@ Slug: <page-slug> | Created: <YYYY-MM-DD> | Status: setup / active / paused
 
 ## Concept
 - Logline: <one sentence>
-- Format: <e.g. 2D mascot curiosity stories, 45-60 s>
+- Format: <e.g. 2D mascot curiosity stories, 30-90 s, usually 45-60 s>
 - Inspired by (formats only, never copied): <pages and what we learned from each>
-- Audience: English, global (US, UK, CA, AU first)
+- Audience: <e.g. English, global; US, UK, CA, AU first>
 
-## Character
-- Mascot: <name>, see brand/mascot-bible.md
-- Narrator voice: <Higgsfield clone of Loy / preset / Chatterbox>
-- Signature open: <line>
-- Signature close: <line>
+## Character and voice
+- Character or style: <name>, see brand/mascot-bible.md
+- Narrator voice: <own voice / Chatterbox clone / Kokoro preset / paid voice>
+- Signature open: <line> | Signature close: <line>
+- Easter egg: <off / on: "KuyaLoy" / on: own signature "<text>"> (one hidden background spot per video)
 
 ## Series (content pillars)
 | Series | What it covers | Example title |
 |---|---|---|
 | <name> | <scope> | <title> |
 
-## Platforms and handles
-| Platform | Name / handle | Status |
-|---|---|---|
-| Facebook Page | <name> | <live / pending> |
-| Instagram | @<handle> | |
-| Threads | @<handle> | |
-| YouTube | @<handle> | |
+## Platforms
+| Platform | Link | Handle | Mode | 2FA | Posting tool | Monetization status (checked date) |
+|---|---|---|---|---|---|---|
+| Facebook Page | | | professional | | Meta Business Suite | |
+| Instagram | | | creator | | Meta Business Suite | |
+| Threads | | | | | Threads app | |
+| YouTube | | | | | YouTube Studio | |
+| TikTok | | | | | TikTok Studio | |
 
 ## Schedule
 - Pace: <4-5 videos per week>
-- Posting times: <e.g. Tue/Thu/Sat/Sun 7:00 PM US Eastern = 4:00 AM Dubai next day>
+- Video length: 30-90 s, usually 45-60 s (the story decides)
+- Posting times: <days and times in the audience timezone> = <same in the user's timezone>
 
 ## Budget
-- Flow credits per video: <150> max
-- Paid tools: none until monetized
+- Visual credits per video: <90> max
+- Paid tools: only the ones in studio.md, new ones only after earning
 
-## Monetization status
-| Program | Requirement | Status | Checked |
-|---|---|---|---|
-| YouTube YPP | 1,000 subs + 10M Shorts views in 90 days, or 4,000 watch hours in 12 months | | |
-| Facebook Content Monetization | Invite-only, express interest in Professional Dashboard | | |
-| Facebook Stars | 500 followers for 30 days | | |
+## Monetization path (for <country of residence>)
+| Platform | Program | Requirement | Status | Checked |
+|---|---|---|---|---|
+| YouTube | Partner Program | 1,000 subs + 10M Shorts views in 90 days, or 4,000 watch hours in 12 months | | |
+| Facebook | Content Monetization | invite-only, express interest in Professional Dashboard | | |
+| Facebook | Stars | 500 followers for 30 days | | |
+| TikTok | <program shown in TikTok Studio> | <rules from the official page> | | |
 
 ## What works (updated by weekly reviews)
 - <finding, with the date>

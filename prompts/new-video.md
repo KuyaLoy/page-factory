@@ -1,30 +1,34 @@
-# NEW VIDEO
+# MAKE ONE VIDEO
 
-Paste in a new chat (Claude Code in the studio root, or Cowork with the studio folder connected).
+Open a NEW chat for every video (Claude Code in your studio folder, or Cowork with it connected) and
+paste the block. One video per chat keeps the AI fresh. The handoff files carry everything over.
 
 ```text
-NEW VIDEO. Page: <page-slug, or ask me>.
+MAKE ONE VIDEO. Page: <page-slug, or ask me if there is more than one page>.
 
-1. Read ai-handoff-summary.md, then CLAUDE.md, then pages/<page>/page.md.
-   Open handoff.md only for the section you need. Use the page-factory skill as the router.
-2. topic-picker: give me 5 topics as multiple choice, recommended first.
-   3 from topics/queue.csv (best score, not in done-topics.csv) + 2 fresh from a quick trend-radar scan.
-   For each: working title, series, hook line, score, why now.
-3. After I pick, run the pipeline. Save everything in pages/<page>/episodes/EP###-<slug>/.
-   a. fact-checker: 2+ sources per claim in brief.md (Sources).
-   b. script-writer: 45-60 s script with the 5-beat timing table. Give me 3 title options.
-   c. shot-planner: shot list, Flow prompts, credit estimate under the page budget, and which
-      Flow account to use (credits.csv).
-   d. STOP. Give me one copy block with every Flow prompt and the exact file name for each result
-      (raw/shot-01.png, raw/shot-02.mp4 ...). Wait until I say "assets done" or the files are in raw/.
-   e. voice-director: narration text for my Higgsfield clone (or run Chatterbox if chosen).
-      I save the file as vo/vo.wav. Then normalize it.
-   f. video-assembler: word captions, assemble with HyperFrames (default) or Remotion or a CapCut
-      draft, export export/final.mp4 at 1080x1920, 30 fps.
-   g. QA: pull 5 frames (hook, 25%, 50%, payoff, end), look at them, fix problems once.
-   h. thumbnail-maker: cover.png (1080x1920) and, if needed, thumb-yt.png (1280x720). 2 variants.
-   i. publisher: final title (multiple choice), Facebook/Instagram/Threads caption (max 5 hashtags),
-      YouTube title and description, AI disclosure check, made-for-kids check, schedule slot.
-4. Update done-topics.csv, credits.csv, schedule.csv, handoff.md and ai-handoff-summary.md.
-5. Finish with: export path, cover path, the caption block, the YouTube block, and the scheduled times.
+This chat makes ONE video. When it's done, I open a new chat for the next one.
+
+1. Read ai-handoff-summary.md, CLAUDE.md, studio.md and pages/<page>/page.md. Open handoff.md only
+   for the section you need. Don't ask me setup questions: the answers are in those files. If
+   something is missing, ask once and save the answer.
+2. Claim the episode: next EP = highest EP in pages/<page>/episodes.csv + 1. Add the row now with
+   status "in progress" and today's date.
+3. topic-picker: 5 topics as multiple choice, recommended first.
+4. After I pick, run the pipeline and save everything in pages/<page>/episodes/EP###-<slug>/:
+   a. fact-checker: 2+ sources per claim.
+   b. script-writer: 30-90 s script (usually 45-60 s, the story sets the length) with the 5-beat
+      timing, 3 title options (I pick).
+   c. shot-planner: shot list, prompts for my visual tool (studio.md), credit plan within budget.
+   d. STOP. Give me one copy block with every prompt and the exact file name for each result.
+      Wait for "assets done" (or check raw/ yourself).
+   e. voice-director: narration with my voice choice (studio.md), saved as vo/vo.wav, normalized.
+   f. video-assembler: word captions, render with my editor (studio.md, default HyperFrames),
+      export export/final.mp4 at 1080x1920, 30 fps.
+   g. QA: look at 5 frames (hook, 25%, 50%, payoff, end) and fix once.
+   h. thumbnail-maker: cover.png (1080x1920) and a YouTube thumbnail if needed. 2 variants, I pick.
+   i. publisher: the posting pack for every platform in page.md (title, caption or description,
+      hashtags, AI disclosure, audience), the schedule slot, and step-by-step posting help.
+5. Close the episode: episodes.csv (status and links), done-topics.csv, queue.csv, credits.csv,
+   schedule.csv, then handoff.md and ai-handoff-summary.md ("Last video: EP###").
+6. End with: file paths, the posting pack, and "Done. Open a new chat for the next video."
 ```

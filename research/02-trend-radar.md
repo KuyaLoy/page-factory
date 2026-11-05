@@ -36,11 +36,12 @@ scripts, titles or thumbnails.
 - Earlier comedy voiceover skits mostly got 50K-1M views (a few 1M-4.5M). The pivot to stories is
   what scaled.
 - Lessons: curiosity title of 3-7 words, a story with a twist, one recognizable character, bold word
-  captions, a voice with personality. All 25 of its curiosity titles are in done-topics.csv so we
+  captions, a voice with personality. All 25 of its curiosity titles are in
+  research/competitors/curiosity-stories.csv. Add them to done-topics.csv for a curiosity page so we
   never retell them.
 
-## 4. Page ideas for Page #1 (original concepts)
-Each idea is our own page. They borrow what works (format, pacing, title patterns), never content.
+## 4. Example page ideas (original concepts)
+Each idea is a page of its own. They borrow what works (format, pacing, title patterns), never content.
 
 ### A. Time Intern (Recommended)
 - Logline: an unpaid intern at the "Department of Weird History" gets zapped into a different moment
@@ -50,8 +51,8 @@ Each idea is our own page. They borrow what works (format, pacing, title pattern
 - Signature: opens with the watch glitching ("Shift 37..."), closes with a dry line ("...and I still
   don't get paid.").
 - Series: Worst Shift Ever (weird jobs) | Loophole Logged (clever rule-bending) | Lost Tech (ancient
-  inventions) | Why It's Like That (origins of everyday things) | Lost Genius (Middle East, Asia,
-  Pacific ideas, from Loy's Dubai and Philippines background).
+  inventions) | Why It's Like That (origins of everyday things) | Lost Genius (ideas from the Middle
+  East, Asia and the Pacific, or any region the creator knows well).
 - Why: a reason for the mascot to be in every era, humor for Facebook shares, "Shift #" numbering for
   binge and follows, a topic pool as big as history.
 - Risk: the frame can repeat. Rotate series and reactions.
@@ -117,6 +118,8 @@ Hook lines (first 2 seconds):
 - "In 1930s London, people paid a woman to shoot peas at their windows."
 - "Look at the edge of a coin. Those tiny ridges stopped a crime wave."
 - "This town was fake. Then someone built a store there."
+
+Video length: 30-90 s, usually 45-60 s, set by the story. Timing below is for 55 s; scale it.
 
 | Time | Beat | Job |
 |---|---|---|

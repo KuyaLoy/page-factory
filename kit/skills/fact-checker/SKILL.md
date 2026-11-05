@@ -20,6 +20,6 @@ description: Check every factual claim of a Page Factory episode against 2 indep
 ## Rules
 - Never invent numbers, dates, names or quotes. If a number can't be confirmed, round it and say
   "about", or drop it.
-- Fewer than 2 good sources for the core claim: tell Loy and suggest another topic.
+- Fewer than 2 good sources for the core claim: tell the user and suggest another topic.
 - No medical, legal or financial advice in scripts.
 - Keep the sources: they protect the page if a viewer challenges a video.

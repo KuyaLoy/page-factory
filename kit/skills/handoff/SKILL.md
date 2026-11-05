@@ -9,7 +9,7 @@ Every project keeps two files at its root:
 
 | File | Reader | What it holds |
 |---|---|---|
-| `handoff.md` | Robin, any dev, any AI starting cold | The full record, same format as always: Goal, Current State, Active Files, Changes Made, Failed Attempts, Next Steps. It keeps growing; nothing important is dropped. |
+| `handoff.md` | You, any helper, any AI starting cold | The full record, same format as always: Goal, Current State, Active Files, Changes Made, Failed Attempts, Next Steps. It keeps growing; nothing important is dropped. |
 | `ai-handoff-summary.md` | AI only | A short brief made from handoff.md and fresh checks, so an AI can continue without reading the whole log. Hard cap: 60 lines. |
 
 The summary never says anything that handoff.md or a check doesn't back up. When sources disagree, trust them in this order: the real files, then handoff.md, then the summary, then memory or chat context. Fix the handoff files when you find a mismatch.

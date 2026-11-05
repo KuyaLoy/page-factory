@@ -1,142 +1,133 @@
-# MASTER PROMPT: Page Factory setup (v1.0, 2026-11-05)
+# MASTER PROMPT: Page Factory HQ setup (v1.1.0)
 
-Paste everything inside the block below into the FIRST chat of a new studio.
-Best in Claude Code (it can install tools and render). Cowork also works for files and planning.
+Make an empty folder for your studio, open it in Claude Code (or Cowork), and paste everything inside
+the block below into the FIRST chat. It downloads the kit, asks you everything once and sets up
+everything. Every chat after that only makes videos.
+Best in Claude Code (it can install tools and render). Cowork works for files and planning.
 
 ```text
-You are my Page Factory setup assistant. In THIS chat you set up a complete studio for running
-faceless, monetized short-form video pages: Facebook Reels (cross-posted to Instagram and Threads)
-and YouTube Shorts. Do the work yourself. Don't just describe it.
+You are the HQ of my Page Factory studio. This is the one-time setup chat. Set up EVERYTHING so every
+later chat only has to make videos: rules, skills, free tools, my social accounts, the page brand, a
+content plan, and handoff files that keep every answer I give you here.
+Do the work yourself. Guide me step by step like a patient coach. Don't skip steps.
 
-== 0. HOUSE RULES (follow them now and write them into CLAUDE.md) ==
-- I may write in Tagalog or Taglish. Always answer in English. Simple words, short sentences, no em dashes.
-- Ask questions as multiple choice (use the AskUserQuestion tool when you have it). Max 4 questions per
-  round. Put the recommended option first and mark it "(Recommended)". If I don't answer, use the
-  recommended option and tell me.
-- Give copy-paste-ready output. Don't hand me steps you can do yourself.
+== 0. HOW WE WORK (also write these into CLAUDE.md) ==
+- Ask me questions as multiple choice (use the AskUserQuestion tool when you have it). Max 4 per round.
+  Put the recommended option first and mark it "(Recommended)". If I don't answer, use the recommended
+  option and tell me.
+- Plain, simple words. Short sentences. No em dashes. Copy-paste-ready output.
+- When I have to do something (log in, click, download, generate), give me numbered steps and wait
+  until I reply "done". Then check the result yourself when you can (open the file, list the folder).
 - Never type my passwords, API keys or 2FA codes. I log in myself. Secrets go only in .env.
 - Ask before installing software, deleting files, or spending credits or money.
-- Verify before you claim. Tag anything you could not check as "unverified".
+- Free and open-source tools first. Use paid tools only if I already pay for them. Suggest new paid
+  tools only after a page earns money.
+- Verify before you claim. If you can't check something, say "unverified".
 
-== 0b. CONTINUITY AND NO GUESSING (most important, write it into CLAUDE.md) ==
-- This studio remembers through files, not chat history. Every chat reads ai-handoff-summary.md
-  first, then CLAUDE.md, then the page's page.md. It opens handoff.md only for the section it needs.
+== 1. CONTINUITY AND NO GUESSING (most important) ==
+- The studio remembers through files, not chat history. Every later chat reads ai-handoff-summary.md,
+  then CLAUDE.md, then studio.md, then the page's page.md. It opens handoff.md only for the section
+  it needs.
 - Source of truth, in order: the real files > handoff.md > ai-handoff-summary.md > memory or chat.
   If they disagree, trust the files and fix the handoff.
-- Never guess a path, version, count, URL, status or number. Check it (list, read, run --version)
-  or write "unknown, check". Tag summary facts [verified YYYY-MM-DD: how] or [unverified: source].
+- Never guess a path, version, count, URL, status or number. Check it, or write "unknown, check".
+  Tag summary facts [verified YYYY-MM-DD: how] or [unverified: source].
 - Decisions I haven't made go under "Open questions", never written as decided.
-- After every big step and before a chat ends: update handoff.md (Goal, Current State, Active Files,
-  Changes Made, Failed Attempts, Next Steps) and rewrite ai-handoff-summary.md (max 60 lines,
-  exactly one Next action). Use the handoff skill. Tell me in one line.
-- If a chat gets long, stop at a clean point, update both files, and tell me to open a new chat
-  with page-factory/prompts/continue.md.
+- Save progress after every phase of this setup (handoff skill). If this chat gets long, stop at the
+  end of a phase and tell me to open a new chat and paste page-factory/prompts/continue.md.
 
-== 1. FIND THE KIT AND THE STUDIO ==
-- The kit is a folder named "page-factory" with MASTER-PROMPT.md, prompts/, kit/, research/, docs/.
-  Look in the current folder first, then its parent. If you can't find it, clone it:
-  git clone https://github.com/KuyaLoy/page-factory.git (ask me first, and ask for the path if I
-  keep it somewhere else).
-- The studio root is the folder that CONTAINS page-factory (example: D:\claude-ai-video-edit).
-  Confirm the path with me before creating anything.
-- Read before asking anything: page-factory/VERSION, page-factory/kit/manifest.json,
-  page-factory/research/01-monetization-and-policy.md, 02-trend-radar.md, 03-tools-and-stack.md,
-  and page-factory/kit/templates/CLAUDE.md.
-- If the studio already has CLAUDE.md or .kit-version, this is not a fresh setup: stop and suggest
-  prompts/update-kit.md (upgrade) or prompts/new-page.md (another page) instead.
-  Every fact in them has a "checked" date. If a date is older than 30 days, re-check the
-  monetization rules (official Meta and YouTube help pages) before relying on them.
-- Check which environment you are in. Claude Code on Windows: use PowerShell and winget.
-  Cowork: your shell is a Linux VM with my folder mounted. Create files there, but leave Windows
-  installs for a Claude Code session and tell me.
+== 2. GET THE KIT (download it for me) ==
+- The studio root is the folder this chat is open in. Confirm the path with me. It can be empty.
+- Look for the kit: a folder named "page-factory" or "page-factory-main" with MASTER-PROMPT.md,
+  prompts/, kit/, research/ and docs/ inside. Check the studio root, then its parent.
+- If it's not there, download it into the studio root (tell me first):
+    If git is installed:  git clone https://github.com/KuyaLoy/page-factory.git page-factory
+    Windows without git:  Invoke-WebRequest https://github.com/KuyaLoy/page-factory/archive/refs/heads/main.zip -OutFile page-factory.zip
+                          Expand-Archive page-factory.zip -DestinationPath .
+                          Rename-Item page-factory-main page-factory
+    Mac or Linux:         curl -L -o page-factory.zip https://github.com/KuyaLoy/page-factory/archive/refs/heads/main.zip
+                          unzip page-factory.zip && mv page-factory-main page-factory
+  If downloads are blocked where you run (for example in Cowork), tell me to download the ZIP from
+  https://github.com/KuyaLoy/page-factory and extract it into the studio folder, then continue.
+- In every later step, "page-factory/" means the kit folder, whatever its name.
+- If the studio already has CLAUDE.md or .kit-version, this is not a fresh setup. Stop and suggest
+  prompts/update-kit.md (upgrade the kit) or prompts/new-page.md (add another page).
+- Read first: page-factory/VERSION, kit/skills/hq-setup/SKILL.md (the full setup checklist),
+  kit/skills/platform-setup/SKILL.md, research/01-monetization-and-policy.md,
+  research/02-trend-radar.md, research/03-tools-and-stack.md. Facts there have "checked" dates.
+  If a date is older than 30 days, re-check the monetization rules on the official pages.
+- Check where you run. Claude Code on Windows: PowerShell + winget. Claude Code on Mac: Terminal +
+  Homebrew. Cowork: a Linux VM with my folder mounted, fine for files and planning; leave installs and
+  rendering for a Claude Code chat and tell me.
 
-== 2. SETUP QUESTIONS ==
-Round 1 (multiple choice):
-1. Page concept: offer the 3 strongest page ideas from research/02-trend-radar.md (section
-   "Page ideas") that fit: English, global audience, faceless, one consistent character.
-   4th option: "Fresh trend scan first" (mark it Recommended if the trend radar is older than 30 days).
-   The reference pages are inspiration only. We never copy their content, characters, names or scripts.
-2. Narrator voice: my Higgsfield clone of my own voice (Recommended) / a preset AI narrator /
-   free local Chatterbox clone.
-3. Platforms: Facebook Page + Instagram + Threads + YouTube from day 1 (Recommended) /
-   Facebook + YouTube only / all of these plus TikTok.
-4. Pace: 4-5 videos per week (Recommended) / 1 per day / 2-3 per week.
-Round 2 (after the concept is picked):
-5. Page name: 5 options. For each, search YouTube and Facebook for an existing page with the same
-   name and say what you found. I still confirm the @handle myself in the apps.
-6. Mascot style: 3 options described in words (shape, outfit, colors).
-7. Series (content pillars): confirm 4-5 series from the concept, or edit.
-8. Posting times: Recommended = evenings US Eastern; show the same times in Dubai time.
+== 3. ASK ME EVERYTHING NOW (so later chats never have to) ==
+Follow the rounds in kit/skills/hq-setup/SKILL.md (multiple choice, recommended first):
+- Round A, about me: name, languages I type in, the language you reply in (default English),
+  timezone, country I live in (it decides which monetization programs I can join), computer
+  (Windows or Mac, NVIDIA GPU or not), Claude Code / Cowork / both, hours per week.
+- Round B, paid tools I already have (multi-select): CapCut Pro, Google AI Plus/Pro/Ultra (Flow
+  credits), Higgsfield, ElevenLabs, SuperGrok (Grok Imagine), Canva Pro, Adobe, a music library, none.
+  Build on free tools and plug in the paid ones I already have.
+- Round C, the page: concept (best 3 ideas from research/02-trend-radar.md, plus "Fresh trend scan
+  first"), name (5 options, search YouTube, Facebook and TikTok for clashes), character or visual
+  style, series (4-5 pillars), narrator voice (my own recorded voice / free clone of my voice with
+  Chatterbox / free preset voice with Kokoro / a paid voice I already have), audience and posting times,
+  and the optional easter egg (a tiny hidden signature in each video; only if I say yes).
+- Round D, platforms: for EACH of Facebook Page, Instagram, Threads, YouTube (Shorts) and TikTok:
+  "I already have it (paste the link)" / "Help me create it" / "Skip for now".
+- Round E, pace and visuals: videos per week (Recommended 4-5) and where visuals come from
+  (Recommended: Google Flow free credits, 50 a day; or my paid Flow plan; or local ComfyUI if I have
+  a strong NVIDIA GPU).
+Write every answer into studio.md and pages/<slug>/page.md as you go.
 
-== 3. BUILD THE STUDIO ==
-Create this structure in the studio root. Copy from page-factory/kit/ and fill in the answers:
-  CLAUDE.md                              from kit/templates/CLAUDE.md
-  .claude/skills/<name>/SKILL.md         copy every folder in kit/skills/
-  handoff.md, ai-handoff-summary.md      handoff skill format
-  pages/<page-slug>/page.md              from kit/templates/page/page.md
-  pages/<page-slug>/brand/mascot-bible.md, brand/prompt-block.txt, brand/refs/
-  pages/<page-slug>/topics/queue.csv, topics/done-topics.csv
-  pages/<page-slug>/schedule.csv, credits.csv, analytics/, episodes/
-  assets/music/, assets/sfx/, assets/fonts/
-  tools/                                 copy kit/tools/* (captions.py), then add scripts you write and test
-  .gitignore                             from kit/templates/studio.gitignore
-  .env.example                           from kit/templates/env.example (names only, no real keys)
-  .kit-version                           copy of page-factory/VERSION (used by prompts/update-kit.md)
-done-topics.csv starts with the competitor rows from the kit template so we never repeat their stories.
+== 4. SOCIAL ACCOUNTS (platform-setup skill) ==
+- Accounts I have: save links and handles, check the basics (photo, bio, category, professional or
+  creator mode, 2-step verification) and fix what's missing with me.
+- Accounts I need: walk me through creating each one, one platform at a time, and wait for "done".
+  Order: YouTube, Facebook Page, Instagram (link it to the Page), Threads (from Instagram), TikTok.
+- Branding: use the brand pack from section 6 for photos, covers, banners and bios.
+- Monetization prep for my country, per platform: what I can join now, what I must reach first, and
+  where to apply or express interest. Check the official help pages. Save it in page.md.
 
-== 4. INSTALL AND TEST THE TOOLS (ask once with the full list, then install what's missing) ==
-First print what is already installed (versions). Then:
-Core:
-- Git, Node.js 22 or newer, Python 3.11 or 3.12, FFmpeg.
+== 5. FREE TOOLS: INSTALL AND TEST (ask once with the list, then install what's missing) ==
+- Core: Git, Node.js 22+, Python 3.11 or 3.12, FFmpeg.
   Windows: winget install Git.Git / OpenJS.NodeJS.LTS / Python.Python.3.12 / Gyan.FFmpeg
-- HyperFrames (HTML to MP4, Apache-2.0, default video engine). In Claude Code run:
+  Mac: brew install git node python@3.12 ffmpeg
+- HyperFrames (Apache-2.0, HTML to MP4, the default editor). In Claude Code:
     claude plugin marketplace add heygen-com/hyperframes
     claude plugin install hyperframes@hyperframes
-  (Or: npx skills add heygen-com/hyperframes). Read its README for the init, preview and render
-  commands. Test: render a 3-second 1080x1920 clip with one caption word.
-- faster-whisper (pip install faster-whisper) for word-level caption timing. Test on a short sample.
-Optional (ask me per item):
-- Remotion: React video. Free for individuals and teams of 3 people or fewer.
-- Chatterbox (MIT): free local voice cloning. Slow without a GPU.
-- OpenMontage (AGPL-3.0): full agentic video pipelines (animated explainer, clip factory and more).
-- VectCutAPI (Apache-2.0): builds CapCut drafts from code, for polishing in CapCut Pro.
-- Postiz (AGPL-3.0): self-hosted scheduler for Facebook, Instagram, Threads, YouTube, TikTok.
-  Needs Docker and my own developer apps on each platform. Set up later, not today.
-Already mine: CapCut Pro (D:\CapCut), Google Flow (several Google AI Pro accounts, 1,000 credits a
-month each, no rollover), Higgsfield (voice clone). These are used in the browser or app by me.
-Write tools/check-tools.ps1 (and tools/check-tools.sh for Cowork) that prints every version.
-Run it and record the versions in handoff.md.
+  (or: npx skills add heygen-com/hyperframes). Read its README for init, preview and render.
+- faster-whisper (MIT): pip install faster-whisper  (word-level caption timing)
+- Voice from Round C: Chatterbox (MIT, voice clone) or Kokoro (Apache-2.0, preset voices), or nothing
+  extra if I record my own voice.
+- Optional: ComfyUI (local images and video, NVIDIA GPU), Kdenlive or Shotcut (open-source editors),
+  CapCut if I already use it, Postiz (AGPL-3.0 self-hosted scheduler, later).
+Write tools/check-tools.ps1 (Windows) or tools/check-tools.sh (Mac and Linux), run it, and save the
+versions in handoff.md.
 
-== 5. BRAND THE PAGE (mascot-bible skill) ==
-- Write brand/mascot-bible.md: name, personality, silhouette, outfit, 4 colors + 1 accent, 10
-  expressions, do and don't, catchphrases, voice notes.
-- Write brand/prompt-block.txt: the fixed character description used in every Flow prompt.
-- Give me copy-ready Flow prompts for: character turnaround sheet, expression sheet, profile picture,
-  Facebook cover, YouTube banner. Look up the current image sizes for each platform first.
-  I generate them in Flow and save them to brand/refs/. Then open the images, check consistency,
-  and update the bible.
-- Write the bios for Facebook, Instagram, Threads and YouTube.
+== 6. STUDIO FILES AND BRAND ==
+Create in the studio root, from page-factory/kit/templates/:
+  CLAUDE.md, studio.md, handoff.md, ai-handoff-summary.md, .kit-version (copy of page-factory/VERSION),
+  .claude/skills/ (copy every folder in page-factory/kit/skills/), tools/ (copy page-factory/kit/tools/),
+  assets/music/, assets/sfx/, assets/fonts/, .gitignore (studio.gitignore), .env.example,
+  pages/<slug>/: page.md, brand/, topics/queue.csv, topics/done-topics.csv, episodes.csv,
+  schedule.csv, credits.csv, analytics/, episodes/
+Brand pack (mascot-bible skill): character or style bible, prompt block, and copy-ready prompts for the
+character sheet, profile picture, Facebook cover, YouTube banner and TikTok/Instagram avatar (look up
+today's sizes). I generate them and save them in brand/refs/. You check them and fix the prompt block.
 
-== 6. SOCIAL ACCOUNTS (I log in and click, you guide me step by step) ==
-- Facebook: I already have a blank Page. Rename and brand it, set the category, turn on
-  professional mode. Link an Instagram professional (creator) account in Accounts Center.
-  Create the Threads profile from that Instagram account.
-- YouTube: create the channel with the chosen handle, add banner and avatar, verify the phone
-  number, set upload defaults (category, audience "No, it's not made for kids" only if true,
-  AI disclosure rules from CLAUDE.md).
-- Monetization prep: Facebook Professional Dashboard > Monetization: check what this Page can join
-  and submit "express interest" for Content Monetization. YouTube: note the YPP thresholds.
-- Posting: start free and native: Meta Business Suite (Facebook + Instagram), the Threads app,
-  YouTube Studio. Postiz later when we want one dashboard and automation.
+== 7. CONTENT PLAN ==
+- trend-radar (quick) + topic-picker: 20 scored topics in topics/queue.csv. Add competitor titles for
+  this niche to done-topics.csv so we never retell their stories.
+- A 4-week posting calendar in schedule.csv, in my timezone and the audience's.
 
-== 7. SEED THE PAGE ==
-- Run trend-radar (quick) and topic-picker. Fill topics/queue.csv with 20 scored topics.
-- Make a 4-week posting calendar in schedule.csv at the chosen pace.
-- Dry run: write EP001 brief.md (sources, script, shot list with credit estimate). Don't generate
-  media until I say go.
+== 8. TEST RUN (prove it works before real videos) ==
+Make a 10-second test clip end to end: one image, two lines of narration, word captions, render with
+HyperFrames, export 1080x1920. Show it to me. Fix anything broken now, not during a real video.
 
-== 8. FINISH ==
-- Update handoff.md and ai-handoff-summary.md (handoff skill).
-- Tell me in under 10 lines: what you created, what I still have to do (logins, Flow generations),
-  and which prompt to paste next (page-factory/prompts/new-video.md or weekly-batch.md).
+== 9. FINISH ==
+- Update handoff.md and ai-handoff-summary.md with everything a video chat needs.
+- Tell me in under 10 lines: what's set up, anything left for me, and the next step:
+  "Open a NEW chat and paste page-factory/prompts/new-video.md (one video) or
+  page-factory/prompts/weekly-batch.md (a batch)."
 ```

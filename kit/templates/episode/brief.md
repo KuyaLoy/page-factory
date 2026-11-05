@@ -1,7 +1,7 @@
 # EP###: <Working title>
 
-Page: <slug> | Series: <series> | Status: idea / sourced / scripted / shots / assets / edit / ready / scheduled / live
-Created: <YYYY-MM-DD>
+Page: <slug> | Series: <series> | Status: in progress / sourced / scripted / shots / assets / edit / ready / scheduled / posted
+Started: <YYYY-MM-DD>
 
 ## Topic
 - One-line story: <what happened>
@@ -13,7 +13,7 @@ Created: <YYYY-MM-DD>
 |---|---|---|---|---|
 | 1 | <claim> | <url, accessed date> | <url, accessed date> | Confirmed / Disputed / Myth (dropped) |
 
-## Script (target 45-60 s, 120-150 words)
+## Script (30-90 s, usually 45-60 s; about 2.5 words per second. Length: <n> s)
 | Time | Beat | Narration | On screen | Caption chunks |
 |---|---|---|---|---|
 | 0-2 s | Hook | | | |
@@ -25,32 +25,32 @@ Created: <YYYY-MM-DD>
 Title options: 1. <> 2. <> 3. <>
 
 ## Shots
-| Shot | Time | Type | Model | Prompt (after the prompt block) | File | Credits |
+| Shot | Time | Type | Model or tool | Prompt (after the prompt block) | File | Credits |
 |---|---|---|---|---|---|---|
 | 01 | 0-2 s | still + motion in edit | Nano Banana | | raw/shot-01.png | 0 |
 | 02 | 2-6 s | motion | Veo 3.1 Lite | | raw/shot-02.mp4 | 10 |
 
-Credit total: <n> (budget <150>) | Flow account: <account label>
+Credit total: <n> (budget <90>) | Account or day: <label>
 
 ## Voice
-- Engine: <Higgsfield clone / Chatterbox>
+- Route: <own voice / Chatterbox / Kokoro / paid voice>
 - Pronunciation notes: <words>
 - File: vo/vo.wav, normalized to about -14 LUFS
 
 ## Edit
-- Engine: <HyperFrames / Remotion / CapCut / ffmpeg>
+- Editor: <HyperFrames / ffmpeg / Remotion / Kdenlive / Shotcut / CapCut>
 - Music: <file and license> | SFX: <files>
-- QA frames checked: hook, 25%, 50%, payoff, end. Issues fixed: <list>
+- QA frames checked: hook, 25%, 50%, payoff, end. Fixed: <list>
 
-## Packaging
-- Final title: <title>
-- Facebook / Instagram / Threads caption:
-- YouTube title:
-- YouTube description:
-- Hashtags (max 5 on Facebook):
+## Posting pack
+- Final title:
+- Facebook / Instagram caption (max 5 hashtags):
+- Threads text:
+- YouTube title / description:
+- TikTok caption:
 - AI disclosure: <not needed / ticked, reason>
 - Audience: not made for kids
 
 ## Publish log
-| Platform | Scheduled (US Eastern / Dubai) | Link | Status |
+| Platform | Scheduled (user tz / audience tz) | Link | Status |
 |---|---|---|---|

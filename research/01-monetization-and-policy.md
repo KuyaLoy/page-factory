@@ -1,15 +1,15 @@
-# 01: Monetization and Policy (Facebook, Instagram, Threads, YouTube)
+# 01: Monetization and Policy (Facebook, Instagram, Threads, YouTube, TikTok)
 
 Last checked: 2026-11-05 | Re-check monthly with prompts/trend-refresh.md
 Confidence: [High] official Meta / Google page read directly. [Med] 2+ secondary sources or one
 careful secondary source citing the official page. [Low] single secondary source, vendor blog or forum.
 
-## TL;DR for a page run from Dubai
+## TL;DR (most useful if you live outside the US, Canada, UK or Australia)
 1. Make every video ourselves (own script, own mascot, own voice, own edit). Both Meta and YouTube
    now reward original work and cut reposts, stitched clips and mass-produced AI slideshows.
 2. Post the same video to the Facebook Page, Instagram, Threads and YouTube from day 1.
    Sharing your own content across your own accounts is allowed.
-3. YouTube is the clear money path: the UAE is a YPP country, thresholds are public.
+3. YouTube is the clearest money path: public thresholds and a long country list (check yours on Help 7101720).
 4. Facebook Content Monetization is still invite-only and Meta publishes no country list. Build
    reach on Facebook, express interest, use Stars from 500 followers.
 5. Shorts pay little per view. Plan long-form compilations (8+ min) for YouTube and Facebook
@@ -37,12 +37,12 @@ careful secondary source citing the official page. [Low] single secondary source
 - Guaranteed $100-$450/month (20K-99K followers), $1,000 (100K+), $3,000 (1M+) for 3 months, plus
   instant Content Monetization access. Needs 1,000+ followers on Instagram, TikTok or YouTube,
   15 eligible reels a month on 10 separate days. [High: creators.facebook.com/creator-fast-track]
-- Only for residents of the United States, Canada, United Kingdom or Australia. A UAE resident
-  can't join. [High: same page]
+- Only for residents of the United States, Canada, United Kingdom or Australia. Creators living
+  anywhere else can't join. [High: same page]
 
 ### Stars and Subscriptions
 - Stars: 500 followers for 30 consecutive days. Subscriptions: 5,000+ followers, age 18+.
-  The UAE and the Philippines are on both country lists. [Med: lilachbullock 2026-10-21 citing Meta]
+  Many countries are on both lists, for example the UAE and the Philippines. [Med: lilachbullock 2026-10-21 citing Meta]
 
 ### Originality rules (most important)
 - "Content filmed or produced directly by a creator or owner of a Profile or Page is considered
@@ -65,11 +65,10 @@ careful secondary source citing the official page. [Low] single secondary source
   realistic-sounding audio that was digitally created or altered. [Low/Med: clippie.ai citing Meta;
   confirm in Meta Help during setup]
 
-### UAE history
-- Facebook launched Ad Breaks for pages in the UAE, Saudi Arabia and Jordan in October 2018 (English
-  videos first). [Med: arabianmarketer.ae and communicateonline.me, 2018] This shows the UAE was an
-  eligible market before; it does not confirm today's Content Monetization access. Check your own
-  Professional Dashboard: it shows exactly what your Page can join.
+### Your country
+- Meta publishes no Content Monetization country list. Your Professional Dashboard > Monetization tab
+  shows exactly what your Page can join. Example of history: Facebook launched Ad Breaks for pages in
+  the UAE, Saudi Arabia and Jordan in October 2018. [Med: arabianmarketer.ae, communicateonline.me, 2018]
 
 ## Instagram and Threads
 - Link an Instagram professional account to the Facebook Page in Accounts Center and post Reels to
@@ -79,6 +78,14 @@ careful secondary source citing the official page. [Low] single secondary source
 - Instagram and Threads do not run a public Reels ads payout comparable to YouTube. Use them for reach
   and followers that feed the Facebook Page and YouTube. [Med]
 
+## TikTok
+- Monetization programs, rules and countries change often, and TikTok's help pages couldn't be read by
+  our research tools on 2026-11-05. Check TikTok Studio > Monetization for what your account can join,
+  and the official Creator Rewards Program page for the current rules. [unverified]
+- One vendor page says Creator Rewards needs videos longer than 1 minute. [Low: kineclip.com, 2026-04]
+  If that holds, only our 60-90 s videos can count there; shorter ones use TikTok for reach.
+- Use TikTok's own AI-generated content label when the visuals are AI.
+
 ## YouTube
 
 ### Partner Program (official, YouTube Help 72851)
@@ -86,7 +93,7 @@ careful secondary source citing the official page. [Low] single secondary source
   1,000 subscribers with 10 million qualified Shorts views in the last 90 days." Shorts Feed watch
   hours don't count toward the 4,000. Also needed: AdSense, 2-Step Verification, no active strikes,
   live in an available country. Review "typically in about 1 month". [High]
-- The UAE is on the YPP country list (Help 7101720). [High]
+- Check your country on the YPP list (Help 7101720). Example: the UAE is listed. [High]
 - Lower tier (fan funding, Shopping): 500 subscribers, 3 public uploads in 90 days, and 3,000 watch
   hours in 12 months or 3M Shorts views in 90 days. [Med: kineclip.com citing YouTube Help, 2026-08]
 - Coming change: from 1 Feb 2027 YouTube says Shorts ad and Premium revenue each month needs at least
@@ -133,7 +140,7 @@ careful secondary source citing the official page. [Low] single secondary source
 ## What this means for the plan
 - Original production is our moat and our compliance. Keep sources per episode.
 - Animate every still and tell a real story. No slideshow look.
-- Narrate with Loy's own cloned voice: no YouTube disclosure needed.
+- Narrate with your own voice or a clone of your own voice: no YouTube disclosure needed.
 - No licensed music in Shorts. Our own or royalty-free tracks.
 - YouTube: grow to 1,000 subs + 10M Shorts views in 90 days. Add long-form compilations with new
   narration to reach 4,000 watch hours as a second path.
