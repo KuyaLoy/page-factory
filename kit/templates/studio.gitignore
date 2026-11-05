@@ -1,0 +1,19 @@
+# Page Factory studio: keep media and secrets out of git
+.env
+*.mp4
+*.mov
+*.webm
+*.wav
+*.mp3
+*.m4a
+*.png
+*.jpg
+*.jpeg
+*.webp
+pages/**/episodes/**/raw/
+pages/**/episodes/**/vo/
+pages/**/episodes/**/edit/
+pages/**/episodes/**/export/
+node_modules/
+.venv/
+__pycache__/

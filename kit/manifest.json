@@ -1,0 +1,180 @@
+{
+  "name": "page-factory",
+  "version": "1.0.0",
+  "built": "2026-11-05",
+  "repo": "https://github.com/KuyaLoy/page-factory",
+  "skills": [
+    {
+      "name": "analytics-review",
+      "path": "kit/skills/analytics-review/SKILL.md",
+      "since": "1.0.0"
+    },
+    {
+      "name": "fact-checker",
+      "path": "kit/skills/fact-checker/SKILL.md",
+      "since": "1.0.0"
+    },
+    {
+      "name": "handoff",
+      "path": "kit/skills/handoff/SKILL.md",
+      "since": "1.0.0"
+    },
+    {
+      "name": "mascot-bible",
+      "path": "kit/skills/mascot-bible/SKILL.md",
+      "since": "1.0.0"
+    },
+    {
+      "name": "page-factory",
+      "path": "kit/skills/page-factory/SKILL.md",
+      "since": "1.0.0"
+    },
+    {
+      "name": "publisher",
+      "path": "kit/skills/publisher/SKILL.md",
+      "since": "1.0.0"
+    },
+    {
+      "name": "script-writer",
+      "path": "kit/skills/script-writer/SKILL.md",
+      "since": "1.0.0"
+    },
+    {
+      "name": "shot-planner",
+      "path": "kit/skills/shot-planner/SKILL.md",
+      "since": "1.0.0"
+    },
+    {
+      "name": "thumbnail-maker",
+      "path": "kit/skills/thumbnail-maker/SKILL.md",
+      "since": "1.0.0"
+    },
+    {
+      "name": "topic-picker",
+      "path": "kit/skills/topic-picker/SKILL.md",
+      "since": "1.0.0"
+    },
+    {
+      "name": "trend-radar",
+      "path": "kit/skills/trend-radar/SKILL.md",
+      "since": "1.0.0"
+    },
+    {
+      "name": "video-assembler",
+      "path": "kit/skills/video-assembler/SKILL.md",
+      "since": "1.0.0"
+    },
+    {
+      "name": "voice-director",
+      "path": "kit/skills/voice-director/SKILL.md",
+      "since": "1.0.0"
+    }
+  ],
+  "prompts": [
+    {
+      "name": "master",
+      "path": "MASTER-PROMPT.md",
+      "since": "1.0.0"
+    },
+    {
+      "name": "continue",
+      "path": "prompts/continue.md",
+      "since": "1.0.0"
+    },
+    {
+      "name": "new-page",
+      "path": "prompts/new-page.md",
+      "since": "1.0.0"
+    },
+    {
+      "name": "new-video",
+      "path": "prompts/new-video.md",
+      "since": "1.0.0"
+    },
+    {
+      "name": "retro",
+      "path": "prompts/retro.md",
+      "since": "1.0.0"
+    },
+    {
+      "name": "trend-refresh",
+      "path": "prompts/trend-refresh.md",
+      "since": "1.0.0"
+    },
+    {
+      "name": "update-kit",
+      "path": "prompts/update-kit.md",
+      "since": "1.0.0"
+    },
+    {
+      "name": "weekly-batch",
+      "path": "prompts/weekly-batch.md",
+      "since": "1.0.0"
+    },
+    {
+      "name": "weekly-review",
+      "path": "prompts/weekly-review.md",
+      "since": "1.0.0"
+    }
+  ],
+  "templates": [
+    {
+      "name": "CLAUDE.md",
+      "path": "kit/templates/CLAUDE.md",
+      "since": "1.0.0"
+    },
+    {
+      "name": "env.example",
+      "path": "kit/templates/env.example",
+      "since": "1.0.0"
+    },
+    {
+      "name": "episode/brief.md",
+      "path": "kit/templates/episode/brief.md",
+      "since": "1.0.0"
+    },
+    {
+      "name": "page/credits.csv",
+      "path": "kit/templates/page/credits.csv",
+      "since": "1.0.0"
+    },
+    {
+      "name": "page/done-topics.csv",
+      "path": "kit/templates/page/done-topics.csv",
+      "since": "1.0.0"
+    },
+    {
+      "name": "page/mascot-bible.md",
+      "path": "kit/templates/page/mascot-bible.md",
+      "since": "1.0.0"
+    },
+    {
+      "name": "page/page.md",
+      "path": "kit/templates/page/page.md",
+      "since": "1.0.0"
+    },
+    {
+      "name": "page/queue.csv",
+      "path": "kit/templates/page/queue.csv",
+      "since": "1.0.0"
+    },
+    {
+      "name": "page/schedule.csv",
+      "path": "kit/templates/page/schedule.csv",
+      "since": "1.0.0"
+    },
+    {
+      "name": "studio.gitignore",
+      "path": "kit/templates/studio.gitignore",
+      "since": "1.0.0"
+    }
+  ],
+  "tools": [
+    {
+      "name": "captions.py",
+      "path": "kit/tools/captions.py",
+      "since": "1.0.0"
+    }
+  ],
+  "modules": []
+}

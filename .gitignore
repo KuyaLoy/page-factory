@@ -1,0 +1,10 @@
+# Page Factory kit repo
+.env
+*.mp4
+*.mov
+*.wav
+*.mp3
+node_modules/
+.venv/
+__pycache__/
+build/

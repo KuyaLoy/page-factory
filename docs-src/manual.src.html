@@ -1,0 +1,846 @@
+<!-- HEAD:START -->
+<title>Page Factory Manual</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<meta name="description" content="Page Factory: a master prompt and skills kit that sets up a faceless Reels and Shorts studio in Claude Code or Cowork.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700;800&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&display=swap">
+<style>
+/* Layout: an animator's production manual. Sticky contents rail on wide screens, one reading column,
+   slate header, timing chart and 9:16 frame guide as the subject's own instruments. */
+:root {
+  --paper: #EDF1F5;
+  --sheet: #FFFFFF;
+  --ink: #1C232B;
+  --ink-soft: #4A5562;
+  --rule: #CBD5DF;
+  --blue: #22689F;
+  --blue-wash: #DCEAF5;
+  --red: #BD372F;
+  --red-wash: #F7E1DF;
+  --amber: #9A620F;
+  --green: #2B7449;
+  --code: #F5F7FA;
+  --hatch: rgba(28, 35, 43, 0.10);
+  --font-display: "Big Shoulders Display", "Arial Narrow", "Roboto Condensed", sans-serif;
+  --font-body: "IBM Plex Sans", "Segoe UI", system-ui, -apple-system, sans-serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, "Cascadia Mono", Consolas, monospace;
+  --step--1: 0.84rem;
+  --step-0: 1rem;
+  --step-1: 1.22rem;
+  --step-2: 1.6rem;
+  --step-3: 2.4rem;
+  --step-4: clamp(3rem, 9vw, 5.6rem);
+  --radius: 6px;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --paper: #0E1318; --sheet: #151C23; --ink: #E3E8ED; --ink-soft: #A2AEBB; --rule: #29333E;
+    --blue: #6BB1E4; --blue-wash: #17304A; --red: #EE6B62; --red-wash: #3A1E1D; --amber: #E2A64A;
+    --green: #5DBF89; --code: #10171E; --hatch: rgba(227, 232, 237, 0.10); color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --paper: #0E1318; --sheet: #151C23; --ink: #E3E8ED; --ink-soft: #A2AEBB; --rule: #29333E;
+  --blue: #6BB1E4; --blue-wash: #17304A; --red: #EE6B62; --red-wash: #3A1E1D; --amber: #E2A64A;
+  --green: #5DBF89; --code: #10171E; --hatch: rgba(227, 232, 237, 0.10); color-scheme: dark;
+}
+
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--font-body);
+  font-size: var(--step-0);
+  line-height: 1.6;
+  -webkit-text-size-adjust: 100%;
+}
+a { color: var(--blue); text-underline-offset: 2px; }
+a:focus-visible, button:focus-visible, summary:focus-visible { outline: 2px solid var(--blue); outline-offset: 2px; }
+h1, h2, h3 { text-wrap: balance; line-height: 1.15; margin: 0; }
+h2 {
+  font-family: var(--font-display); font-weight: 800; font-size: var(--step-3);
+  letter-spacing: 0.01em; text-transform: uppercase;
+}
+h3 { font-size: var(--step-1); font-weight: 600; }
+p { margin: 0; }
+code, pre, .mono { font-family: var(--font-mono); }
+code { font-size: 0.9em; background: var(--code); border: 1px solid var(--rule); border-radius: 4px; padding: 0 0.3em; }
+
+.wrap {
+  max-width: 1180px; margin: 0 auto;
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+  padding-block: 32px 64px;
+  display: grid; grid-template-columns: 210px minmax(0, 1fr); gap: 48px;
+}
+.rail { position: sticky; top: calc(env(safe-area-inset-top, 0px) + 24px); align-self: start; }
+.rail-title { font-family: var(--font-mono); font-size: var(--step--1); letter-spacing: 0.08em; text-transform: uppercase; color: var(--ink-soft); margin-bottom: 8px; }
+.rail ol { list-style: none; margin: 0; padding: 0; display: grid; gap: 2px; border-left: 2px solid var(--rule); }
+.rail a { display: block; padding: 3px 0 3px 12px; margin-left: -2px; border-left: 2px solid transparent; color: var(--ink-soft); text-decoration: none; font-size: 0.92rem; }
+.rail a:hover { color: var(--ink); border-left-color: var(--blue); }
+
+main { min-width: 0; max-width: 820px; display: grid; gap: 64px; }
+section { display: grid; gap: 18px; scroll-margin-top: 24px; }
+.kicker { font-family: var(--font-mono); font-size: var(--step--1); letter-spacing: 0.08em; text-transform: uppercase; color: var(--red); }
+.lead { font-size: var(--step-1); color: var(--ink-soft); max-width: 62ch; }
+.prose { max-width: 66ch; display: grid; gap: 12px; }
+
+/* Header slate */
+.masthead { display: grid; gap: 20px; }
+.masthead h1 { font-family: var(--font-display); font-weight: 800; font-size: var(--step-4); letter-spacing: 0.005em; text-transform: uppercase; line-height: 0.92; }
+.slate { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); border: 2px solid var(--ink); border-radius: var(--radius); background: var(--sheet); overflow: hidden; }
+.slate div { padding: 10px 14px; border-right: 1px solid var(--rule); border-bottom: 1px solid var(--rule); min-width: 0; }
+.slate dt { font-family: var(--font-mono); font-size: 0.72rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--ink-soft); }
+.slate dd { margin: 2px 0 0; font-weight: 600; }
+.slate-stripes { height: 14px; background: repeating-linear-gradient(-45deg, var(--ink) 0 14px, var(--sheet) 14px 28px); grid-column: 1 / -1; }
+
+/* Flow */
+.flow { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 10px; }
+.flow-step { background: var(--sheet); border: 1px solid var(--rule); border-top: 4px solid var(--blue); border-radius: var(--radius); padding: 14px; display: grid; gap: 6px; align-content: start; position: relative; }
+.flow-step.once { border-top-color: var(--red); }
+.flow-step h3 { font-family: var(--font-display); font-weight: 800; font-size: 1.35rem; text-transform: uppercase; letter-spacing: 0.02em; }
+.when { font-family: var(--font-mono); font-size: 0.74rem; letter-spacing: 0.06em; text-transform: uppercase; color: var(--ink-soft); }
+.flow-step p { font-size: 0.92rem; }
+.note { border-left: 3px solid var(--blue); background: var(--blue-wash); padding: 12px 16px; border-radius: 0 var(--radius) var(--radius) 0; max-width: 70ch; }
+.note.warn { border-left-color: var(--red); background: var(--red-wash); }
+
+/* Two columns */
+.cols { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; }
+.panel { background: var(--sheet); border: 1px solid var(--rule); border-radius: var(--radius); padding: 18px; display: grid; gap: 10px; align-content: start; min-width: 0; }
+.panel ol, .panel ul, .prose ul, .prose ol { margin: 0; padding-left: 1.2em; display: grid; gap: 6px; }
+
+/* Prompts */
+.prompt { background: var(--sheet); border: 1px solid var(--rule); border-radius: var(--radius); overflow: hidden; }
+.prompt-head { display: flex; flex-wrap: wrap; gap: 8px 16px; align-items: center; justify-content: space-between; padding: 12px 14px; border-bottom: 1px solid var(--rule); }
+.prompt-head h3 { font-size: 1.05rem; }
+.prompt-head p { color: var(--ink-soft); font-size: 0.9rem; flex-basis: 100%; }
+.prompt-title { display: flex; gap: 10px; align-items: baseline; min-width: 0; }
+.tag { font-family: var(--font-mono); font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.08em; color: var(--ink-soft); }
+.copy { font: 600 0.86rem var(--font-body); color: var(--sheet); background: var(--ink); border: 0; border-radius: 4px; padding: 7px 14px; cursor: pointer; }
+.copy:hover { background: var(--blue); }
+.prompt pre { margin: 0; padding: 14px; background: var(--code); overflow: auto; max-height: 340px; font-size: 0.82rem; line-height: 1.55; white-space: pre; }
+.prompt.tall pre { max-height: 460px; }
+
+/* Pipeline */
+.steps { list-style: none; margin: 0; padding: 0; display: grid; gap: 8px; counter-reset: s; }
+.steps li { counter-increment: s; display: grid; grid-template-columns: 2.4rem minmax(0, 1fr) auto; gap: 12px; align-items: baseline; background: var(--sheet); border: 1px solid var(--rule); border-radius: var(--radius); padding: 10px 14px; }
+.steps li::before { content: counter(s, decimal-leading-zero); font-family: var(--font-mono); color: var(--red); font-weight: 500; }
+.steps strong { font-weight: 600; }
+.steps .chip { font-family: var(--font-mono); font-size: 0.74rem; color: var(--ink-soft); border: 1px solid var(--rule); border-radius: 999px; padding: 1px 8px; white-space: nowrap; }
+.steps li.you { border-color: var(--red); }
+
+.instruments { display: grid; grid-template-columns: minmax(0, 1fr) 190px; gap: 24px; align-items: start; }
+.timing { background: var(--sheet); border: 1px solid var(--rule); border-radius: var(--radius); padding: 16px; display: grid; gap: 12px; min-width: 0; }
+.bar { display: flex; height: 34px; border-radius: 4px; overflow: hidden; border: 1px solid var(--ink); }
+.bar span { display: block; border-right: 1px solid var(--ink); }
+.bar span:last-child { border-right: 0; }
+.b-hook { flex: 2; background: var(--red); }
+.b-setup { flex: 8; background: var(--blue-wash); }
+.b-esc { flex: 25; background: var(--blue); }
+.b-pay { flex: 13; background: var(--amber); }
+.b-btn { flex: 7; background: var(--hatch); }
+.ticks { position: relative; height: 1.2em; font-family: var(--font-mono); font-size: 0.72rem; color: var(--ink-soft); }
+.ticks span { position: absolute; top: 0; transform: translateX(-50%); white-space: nowrap; }
+.ticks span:first-child { transform: none; }
+.ticks span:last-child { left: auto; right: 0; transform: none; }
+.legend { list-style: none; margin: 0; padding: 0; display: grid; gap: 6px; font-size: 0.92rem; }
+.legend li { display: grid; grid-template-columns: 14px 6.5rem minmax(0, 1fr); gap: 10px; align-items: baseline; }
+.legend i { width: 14px; height: 14px; border: 1px solid var(--ink); border-radius: 2px; display: inline-block; transform: translateY(2px); }
+.legend .tc { font-family: var(--font-mono); font-size: 0.82rem; color: var(--ink-soft); }
+
+.frame { width: 100%; max-width: 190px; aspect-ratio: 9 / 16; border: 2px solid var(--ink); border-radius: 10px; background: var(--sheet); position: relative; overflow: hidden; }
+.frame .band { position: absolute; left: 8%; right: 18%; top: 40%; height: 20%; background: var(--blue-wash); border: 1px dashed var(--blue); display: grid; place-items: center; font: 600 0.7rem var(--font-mono); color: var(--blue); text-align: center; }
+.frame .ui-bottom { position: absolute; left: 0; right: 0; bottom: 0; height: 20%; background: repeating-linear-gradient(45deg, var(--hatch) 0 6px, transparent 6px 12px); border-top: 1px dashed var(--ink-soft); display: grid; place-items: center; font: 0.66rem var(--font-mono); color: var(--ink-soft); }
+.frame .ui-right { position: absolute; right: 0; top: 45%; bottom: 20%; width: 14%; background: repeating-linear-gradient(45deg, var(--hatch) 0 6px, transparent 6px 12px); border-left: 1px dashed var(--ink-soft); }
+.frame .hook { position: absolute; left: 8%; right: 8%; top: 8%; font: 600 0.66rem var(--font-mono); color: var(--red); text-align: center; }
+.frame-cap { font-size: 0.82rem; color: var(--ink-soft); margin-top: 8px; max-width: 190px; }
+
+/* Tables */
+.table-wrap { overflow-x: auto; background: var(--sheet); border: 1px solid var(--rule); border-radius: var(--radius); }
+table { border-collapse: collapse; width: 100%; font-size: 0.9rem; }
+th, td { text-align: left; vertical-align: top; padding: 9px 12px; border-bottom: 1px solid var(--rule); }
+th { font-family: var(--font-mono); font-weight: 500; font-size: 0.74rem; letter-spacing: 0.06em; text-transform: uppercase; color: var(--ink-soft); background: var(--code); white-space: nowrap; }
+tr:last-child td { border-bottom: 0; }
+td.num, th.num { text-align: right; font-variant-numeric: tabular-nums; white-space: nowrap; }
+
+/* Credit bars */
+.cbars { display: grid; gap: 10px; background: var(--sheet); border: 1px solid var(--rule); border-radius: var(--radius); padding: 16px; }
+.crow { display: grid; grid-template-columns: minmax(0, 13rem) minmax(0, 1fr) 4.5rem; gap: 12px; align-items: center; font-size: 0.9rem; }
+.ctrack { height: 16px; background: var(--code); border: 1px solid var(--rule); border-radius: 3px; overflow: hidden; }
+.cfill { height: 100%; background: var(--blue); }
+.cfill.hot { background: var(--red); }
+.cval { font-family: var(--font-mono); font-variant-numeric: tabular-nums; text-align: right; }
+.caxis { display: grid; grid-template-columns: minmax(0, 13rem) minmax(0, 1fr) 4.5rem; gap: 12px; font: 0.72rem var(--font-mono); color: var(--ink-soft); }
+.caxis span:nth-child(2) { display: flex; justify-content: space-between; }
+
+/* Money cards */
+.money { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px; }
+.money .panel h3 { font-family: var(--font-display); font-weight: 800; text-transform: uppercase; font-size: 1.4rem; letter-spacing: 0.02em; }
+.status { font-family: var(--font-mono); font-size: 0.74rem; text-transform: uppercase; letter-spacing: 0.06em; border-radius: 999px; padding: 2px 10px; justify-self: start; }
+.status.go { color: var(--green); border: 1px solid var(--green); }
+.status.wait { color: var(--amber); border: 1px solid var(--amber); }
+.status.reach { color: var(--blue); border: 1px solid var(--blue); }
+.small { font-size: 0.86rem; color: var(--ink-soft); }
+
+/* Ideas */
+.ideas { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }
+.idea { background: var(--sheet); border: 1px solid var(--rule); border-radius: var(--radius); padding: 16px; display: grid; gap: 8px; align-content: start; }
+.idea.pick { border: 2px solid var(--red); }
+.idea-head { display: flex; flex-wrap: wrap; gap: 8px; align-items: baseline; justify-content: space-between; }
+.idea h3 { font-family: var(--font-display); font-weight: 800; text-transform: uppercase; font-size: 1.5rem; letter-spacing: 0.02em; }
+.pill { font: 600 0.72rem var(--font-mono); text-transform: uppercase; letter-spacing: 0.06em; color: var(--red); border: 1px solid var(--red); border-radius: 999px; padding: 1px 8px; }
+.idea dl { margin: 0; display: grid; gap: 4px; font-size: 0.9rem; }
+.idea dt { font-family: var(--font-mono); font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.06em; color: var(--ink-soft); }
+.idea dd { margin: 0 0 4px; }
+
+.checks { list-style: none; margin: 0; padding: 0; display: grid; gap: 8px; }
+.checks li { display: grid; grid-template-columns: 18px minmax(0, 1fr); gap: 10px; }
+.checks li::before { content: ""; width: 14px; height: 14px; border: 2px solid var(--ink-soft); border-radius: 3px; transform: translateY(4px); }
+
+.sources { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; }
+.sources ul { margin: 0; padding-left: 1.1em; display: grid; gap: 4px; font-size: 0.86rem; overflow-wrap: anywhere; }
+
+footer { border-top: 1px solid var(--rule); padding-top: 16px; color: var(--ink-soft); font-size: 0.86rem; }
+
+@media (max-width: 980px) {
+  .flow { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .money { grid-template-columns: minmax(0, 1fr); }
+}
+@media (max-width: 860px) {
+  .wrap { grid-template-columns: minmax(0, 1fr); gap: 28px; padding-block: 20px 48px; }
+  .rail { position: static; }
+  .rail ol { display: flex; flex-wrap: wrap; gap: 6px; border-left: 0; }
+  .rail a { border: 1px solid var(--rule); border-radius: 999px; padding: 2px 10px; margin: 0; background: var(--sheet); font-size: 0.84rem; }
+  .instruments { grid-template-columns: minmax(0, 1fr); }
+}
+@media (max-width: 640px) {
+  .flow, .cols, .ideas, .sources { grid-template-columns: minmax(0, 1fr); }
+  .slate { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .steps li { grid-template-columns: 2.2rem minmax(0, 1fr); }
+  .steps .chip { grid-column: 2; justify-self: start; }
+  .crow, .caxis { grid-template-columns: minmax(0, 1fr) 4rem; }
+  .crow .clabel { grid-column: 1 / -1; }
+  .caxis span:first-child { display: none; }
+  .legend li { grid-template-columns: 14px 5.6rem minmax(0, 1fr); }
+}
+@media (prefers-reduced-motion: no-preference) {
+  .copy { transition: background-color 0.15s ease; }
+}
+</style>
+<!-- HEAD:END -->
+<div class="wrap">
+  <nav class="rail" aria-label="Contents">
+    <div class="rail-title">Contents</div>
+    <ol>
+      <li><a href="#flow">How it works</a></li>
+      <li><a href="#start">Start here</a></li>
+      <li><a href="#prompts">Prompts</a></li>
+      <li><a href="#pipeline">One video</a></li>
+      <li><a href="#tools">Tool stack</a></li>
+      <li><a href="#credits">Flow credits</a></li>
+      <li><a href="#money">Monetization</a></li>
+      <li><a href="#trends">Trend radar</a></li>
+      <li><a href="#ideas">Page ideas</a></li>
+      <li><a href="#social">Accounts and posting</a></li>
+      <li><a href="#week">Weekly rhythm</a></li>
+      <li><a href="#rules">House rules</a></li>
+      <li><a href="#kit">Improve the kit</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#sources">Sources</a></li>
+    </ol>
+  </nav>
+
+  <main>
+    <header class="masthead">
+      <div class="kicker">Production manual &middot; v1.0 &middot; facts checked 2026-11-05</div>
+      <h1>Page Factory</h1>
+      <p class="lead">One master prompt sets up a faceless Reels and Shorts studio in Claude Code or Cowork. After that, every chat makes one finished video: topic, sources, script, visuals, voice, captions, title, cover and schedule.</p>
+      <dl class="slate">
+        <div class="slate-stripes" aria-hidden="true"></div>
+        <div><dt>Frame</dt><dd>9:16 &middot; 1080&times;1920</dd></div>
+        <div><dt>Rate</dt><dd>30 fps</dd></div>
+        <div><dt>Length</dt><dd>45-60 s</dd></div>
+        <div><dt>Platforms</dt><dd>Facebook, Instagram, Threads, YouTube</dd></div>
+        <div><dt>Pace</dt><dd>4-5 videos a week</dd></div>
+        <div><dt>Language</dt><dd>Type Tagalog or English, answers in English</dd></div>
+      </dl>
+    </header>
+
+    <section id="flow">
+      <div class="kicker">The system</div>
+      <h2>How it works</h2>
+      <div class="flow">
+        <article class="flow-step once">
+          <span class="when">Once</span>
+          <h3>Setup</h3>
+          <p>Paste the master prompt. It asks a few multiple-choice questions, installs and tests the tools, writes the rules and skills, brands the page and seeds 20 topics.</p>
+        </article>
+        <article class="flow-step">
+          <span class="when">Every chat</span>
+          <h3>Video</h3>
+          <p>Pick 1 of 5 topics. The chat sources, scripts and plans the shots, waits while you generate in Flow, then edits, captions, covers and schedules.</p>
+        </article>
+        <article class="flow-step">
+          <span class="when">Weekends</span>
+          <h3>Weekly batch</h3>
+          <p>Plan 4-5 videos at once. One generation sheet for Flow, one narration sheet for Higgsfield, then assemble and schedule the week.</p>
+        </article>
+        <article class="flow-step">
+          <span class="when">Weekly</span>
+          <h3>Review</h3>
+          <p>Paste your numbers. Get keep, change and test decisions plus a monetization tracker.</p>
+        </article>
+        <article class="flow-step">
+          <span class="when">Any time</span>
+          <h3>New page</h3>
+          <p>Fresh trend scan, 4 concepts, then the same setup for a new page in the same studio.</p>
+        </article>
+      </div>
+      <p class="note">Chats don't remember each other, so the studio does. Every chat starts by reading <code>ai-handoff-summary.md</code> and ends by updating it and <code>handoff.md</code>. Paste <code>continue</code> any time to pick up exactly where the last chat stopped.</p>
+    </section>
+
+    <section id="start">
+      <div class="kicker">Day one</div>
+      <h2>Start here</h2>
+      <div class="cols">
+        <div class="panel">
+          <h3>Claude Code (recommended for setup)</h3>
+          <ol>
+            <li>Keep the kit at <code>D:\claude-ai-video-edit\page-factory</code> (or <code>git clone https://github.com/KuyaLoy/page-factory.git</code> there). The studio root is <code>D:\claude-ai-video-edit</code>.</li>
+            <li>Open PowerShell in the studio root and run <code>claude</code>.</li>
+            <li>Paste the master prompt below. Answer the questions.</li>
+            <li>Every later chat: run <code>claude</code> in the same folder and paste a prompt from this page.</li>
+          </ol>
+        </div>
+        <div class="panel">
+          <h3>Cowork</h3>
+          <ol>
+            <li>Connect <code>D:\claude-ai-video-edit</code> in the Claude desktop app.</li>
+            <li>Start a task and paste the master prompt.</li>
+            <li>Cowork is great for research, scripts, planning and reviews. Do installs and video rendering in Claude Code.</li>
+            <li>Later: paste any prompt from this page.</li>
+          </ol>
+        </div>
+      </div>
+      <p class="note">Already yours: several Google Flow accounts (1,000 credits a month each), CapCut Pro, and your voice clone in Higgsfield. Paid upgrades wait until the pages earn.</p>
+    </section>
+
+    <section id="prompts">
+      <div class="kicker">Copy and paste</div>
+      <h2>Prompts</h2>
+      <p class="prose">The master prompt runs once per studio. The others start every later chat. Each copy button copies only the part you paste.</p>
+
+      <div class="prompt tall">
+        <div class="prompt-head">
+          <div class="prompt-title"><h3>Master prompt</h3><span class="tag">Setup &middot; once</span></div>
+          <button class="copy" type="button" data-copy="p-master">Copy</button>
+          <p>Sets up rules, skills, tools, social accounts, the page brand and the first 20 topics.</p>
+        </div>
+        <pre id="p-master">{{PROMPT:MASTER}}</pre>
+      </div>
+
+      <div class="prompt">
+        <div class="prompt-head">
+          <div class="prompt-title"><h3>New video</h3><span class="tag">Every video</span></div>
+          <button class="copy" type="button" data-copy="p-video">Copy</button>
+          <p>Topic options, then the full pipeline for one video.</p>
+        </div>
+        <pre id="p-video">{{PROMPT:NEW_VIDEO}}</pre>
+      </div>
+
+      <div class="prompt">
+        <div class="prompt-head">
+          <div class="prompt-title"><h3>Weekly batch</h3><span class="tag">Weekends</span></div>
+          <button class="copy" type="button" data-copy="p-batch">Copy</button>
+          <p>Plan and build 4-5 videos with one generation sheet and a posting schedule.</p>
+        </div>
+        <pre id="p-batch">{{PROMPT:WEEKLY_BATCH}}</pre>
+      </div>
+
+      <div class="prompt">
+        <div class="prompt-head">
+          <div class="prompt-title"><h3>Weekly review</h3><span class="tag">Weekly</span></div>
+          <button class="copy" type="button" data-copy="p-review">Copy</button>
+          <p>Numbers in, decisions out, monetization progress tracked.</p>
+        </div>
+        <pre id="p-review">{{PROMPT:WEEKLY_REVIEW}}</pre>
+      </div>
+
+      <div class="prompt">
+        <div class="prompt-head">
+          <div class="prompt-title"><h3>New page</h3><span class="tag">Any time</span></div>
+          <button class="copy" type="button" data-copy="p-page">Copy</button>
+          <p>Trend scan, 4 concepts, then setup for another page in the same studio.</p>
+        </div>
+        <pre id="p-page">{{PROMPT:NEW_PAGE}}</pre>
+      </div>
+
+      <div class="prompt">
+        <div class="prompt-head">
+          <div class="prompt-title"><h3>Trend refresh</h3><span class="tag">Monthly</span></div>
+          <button class="copy" type="button" data-copy="p-trend">Copy</button>
+          <p>Re-checks trends and monetization rules, refills topic queues.</p>
+        </div>
+        <pre id="p-trend">{{PROMPT:TREND_REFRESH}}</pre>
+      </div>
+
+      <div class="prompt">
+        <div class="prompt-head">
+          <div class="prompt-title"><h3>Continue</h3><span class="tag">Any time</span></div>
+          <button class="copy" type="button" data-copy="p-continue">Copy</button>
+          <p>Pick up where the last chat stopped.</p>
+        </div>
+        <pre id="p-continue">{{PROMPT:CONTINUE}}</pre>
+      </div>
+
+      <div class="prompt">
+        <div class="prompt-head">
+          <div class="prompt-title"><h3>Update kit</h3><span class="tag">New kit version</span></div>
+          <button class="copy" type="button" data-copy="p-update">Copy</button>
+          <p>Pulls the newest kit into a studio. New skills and tools in, page data untouched.</p>
+        </div>
+        <pre id="p-update">{{PROMPT:UPDATE_KIT}}</pre>
+      </div>
+
+      <div class="prompt">
+        <div class="prompt-head">
+          <div class="prompt-title"><h3>Retro</h3><span class="tag">Improve the kit</span></div>
+          <button class="copy" type="button" data-copy="p-retro">Copy</button>
+          <p>Reviews real work folders and turns the lessons into a new kit version.</p>
+        </div>
+        <pre id="p-retro">{{PROMPT:RETRO}}</pre>
+      </div>
+    </section>
+
+    <section id="pipeline">
+      <div class="kicker">Inside a video chat</div>
+      <h2>Making one video</h2>
+      <ol class="steps">
+        <li><span><strong>Topic.</strong> 5 options, recommended first, checked against done topics.</span><span class="chip">topic-picker</span></li>
+        <li><span><strong>Sources.</strong> 2 independent sources per claim. Myths dropped.</span><span class="chip">fact-checker</span></li>
+        <li><span><strong>Script.</strong> 45-60 s, 120-150 words, 3 title options.</span><span class="chip">script-writer</span></li>
+        <li><span><strong>Shots.</strong> 10-14 shots, Flow prompts, credit budget, file names.</span><span class="chip">shot-planner</span></li>
+        <li class="you"><span><strong>You generate.</strong> One copy block into Flow. Save files with the given names.</span><span class="chip">Flow</span></li>
+        <li><span><strong>Voice.</strong> Your Higgsfield clone, normalized to about -14 LUFS.</span><span class="chip">voice-director</span></li>
+        <li><span><strong>Edit.</strong> Word captions, motion on every still, music, SFX, 5-frame QA.</span><span class="chip">video-assembler</span></li>
+        <li><span><strong>Cover.</strong> 2 variants for Reels and Shorts, YouTube thumbnail if needed.</span><span class="chip">thumbnail-maker</span></li>
+        <li><span><strong>Publish.</strong> Captions, disclosure check, audience setting, schedule.</span><span class="chip">publisher</span></li>
+      </ol>
+
+      <div class="instruments">
+        <div class="timing">
+          <h3>Script timing chart (55 s)</h3>
+          <div class="bar" role="img" aria-label="Hook 0 to 2 seconds, setup 2 to 10, escalation 10 to 35, payoff 35 to 48, button 48 to 55">
+            <span class="b-hook"></span><span class="b-setup"></span><span class="b-esc"></span><span class="b-pay"></span><span class="b-btn"></span>
+          </div>
+          <div class="ticks" aria-hidden="true"><span style="left: 0">00:00</span><span style="left: 18.18%">00:10</span><span style="left: 36.36%">00:20</span><span style="left: 54.55%">00:30</span><span style="left: 72.73%">00:40</span><span>00:55</span></div>
+          <ul class="legend">
+            <li><i style="background: var(--red)"></i><span class="tc">00:00-00:02</span><span><strong>Hook.</strong> Weird true claim plus the strongest visual.</span></li>
+            <li><i style="background: var(--blue-wash)"></i><span class="tc">00:02-00:10</span><span><strong>Setup.</strong> Where, when, who. The mascot arrives.</span></li>
+            <li><i style="background: var(--blue)"></i><span class="tc">00:10-00:35</span><span><strong>Escalation.</strong> Why it happened, what went wrong, the twist.</span></li>
+            <li><i style="background: var(--amber)"></i><span class="tc">00:35-00:48</span><span><strong>Payoff.</strong> The reveal.</span></li>
+            <li><i style="background: var(--hatch)"></i><span class="tc">00:48-00:55</span><span><strong>Button.</strong> Dry one-liner that loops back to frame one.</span></li>
+          </ul>
+        </div>
+        <figure style="margin: 0">
+          <div class="frame" role="img" aria-label="9 by 16 frame guide: captions in the middle band, keep clear of the bottom bar and the right-side buttons">
+            <div class="hook">HOOK VISUAL</div>
+            <div class="band">CAPTIONS<br>2-4 WORDS</div>
+            <div class="ui-right"></div>
+            <div class="ui-bottom">app UI</div>
+          </div>
+          <figcaption class="frame-cap">Keep captions in the middle band. The bottom bar and right-side buttons cover the frame in every app.</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section id="tools">
+      <div class="kicker">One job per tool</div>
+      <h2>Tool stack</h2>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>Job</th><th>Use now</th><th>Free option</th><th>Later</th></tr></thead>
+          <tbody>
+            <tr><td>Ideas, sources, scripts</td><td>Claude + kit skills</td><td></td><td></td></tr>
+            <tr><td>Mascot and stills</td><td>Google Flow, Nano Banana</td><td>ComfyUI</td><td>Grok Imagine</td></tr>
+            <tr><td>Motion clips</td><td>Flow: Veo 3.1 Lite, Omni Flash</td><td>ComfyUI + Wan (strong GPU)</td><td>Grok Imagine</td></tr>
+            <tr><td>Voice</td><td>Higgsfield clone of your voice</td><td>Chatterbox (MIT)</td><td>ElevenLabs direct</td></tr>
+            <tr><td>Captions</td><td>faster-whisper (kit script)</td><td>WhisperX, CapCut auto captions</td><td></td></tr>
+            <tr><td>Assembly</td><td>HyperFrames (HTML to MP4)</td><td>ffmpeg</td><td>Remotion (free for 3 people or fewer)</td></tr>
+            <tr><td>Hands-on polish</td><td>CapCut Pro</td><td>VectCutAPI (CapCut drafts from code)</td><td></td></tr>
+            <tr><td>Full pipelines</td><td></td><td>OpenMontage (AGPL-3.0)</td><td></td></tr>
+            <tr><td>Covers</td><td>HyperFrames still or HTML template</td><td>Flow image + text overlay</td><td></td></tr>
+            <tr><td>Posting</td><td>Meta Business Suite, Threads, YouTube Studio</td><td>Postiz (self-hosted), Posthive (MCP)</td><td>Postiz Cloud</td></tr>
+            <tr><td>Music</td><td>Your own, YouTube Audio Library, Facebook Sound Collection</td><td></td><td>Suno with commercial rights</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="note">HyperFrames turns HTML, CSS and GSAP animation into MP4 by rendering frames in headless Chrome and encoding with FFmpeg. As a front-end developer, this is your home turf: caption styles, title cards and covers are just web pages.</p>
+    </section>
+
+    <section id="credits">
+      <div class="kicker">Google AI Pro &middot; 1,000 credits per account per month &middot; no rollover</div>
+      <h2>Flow credits</h2>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>Model</th><th>Clip</th><th class="num">Credits</th><th>Use for</th></tr></thead>
+          <tbody>
+            <tr><td>Nano Banana 2 Lite (image)</td><td>still</td><td class="num">0*</td><td>Most shots, mascot poses, backgrounds</td></tr>
+            <tr><td>Veo 3.1 Lite</td><td>4-8 s</td><td class="num">10</td><td>Key motion moments, takes the mascot as an ingredient</td></tr>
+            <tr><td>Gemini Omni Flash 720p</td><td>4-10 s</td><td class="num">7-15</td><td>Cheap motion, ingredients, video edits (4 s = 7, 10 s = 15)</td></tr>
+            <tr><td>Veo 3.1 Fast</td><td>4-8 s</td><td class="num">20</td><td>When Lite isn't good enough</td></tr>
+            <tr><td>Veo 3.1 Quality</td><td>8 s</td><td class="num">100</td><td>Hero shot on a topic that already proved itself</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="small">*Flow Help lists Nano Banana 2 Lite as available at no charge. Limits can change; re-check monthly.</p>
+      <div class="cbars" role="img" aria-label="Credits per video: all-motion plan 480, image-first plan 60 to 120">
+        <h3>Credits per video</h3>
+        <div class="crow"><span class="clabel">All-motion: 12 Veo Fast shots &times; 2 tries</span><div class="ctrack"><div class="cfill hot" style="width: 100%"></div></div><span class="cval">480</span></div>
+        <div class="crow"><span class="clabel">Image-first, upper end</span><div class="ctrack"><div class="cfill" style="width: 25%"></div></div><span class="cval">120</span></div>
+        <div class="crow"><span class="clabel">Image-first, lower end</span><div class="ctrack"><div class="cfill" style="width: 12.5%"></div></div><span class="cval">60</span></div>
+        <div class="caxis" aria-hidden="true"><span></span><span><span>0</span><span>240</span><span>480</span></span><span></span></div>
+      </div>
+      <p class="prose">Image-first means 8-10 stills animated in the edit plus 3-4 real motion shots. That gives 8-15 videos per account a month instead of 2. "Image-first" never means slideshow: YouTube does not monetize image slideshows with minimal narrative, so every still moves and every video tells a story.</p>
+    </section>
+
+    <section id="money">
+      <div class="kicker">For a page run from Dubai</div>
+      <h2>Monetization</h2>
+      <div class="money">
+        <div class="panel">
+          <span class="status go">Clear path</span>
+          <h3>YouTube</h3>
+          <ul>
+            <li>1,000 subs + 10M qualified Shorts views in 90 days, or 1,000 subs + 4,000 watch hours in 12 months.</li>
+            <li>The UAE is a YPP country. Review takes about a month.</li>
+            <li>Creators keep 45% of their allocated Shorts revenue.</li>
+            <li>From 1 Feb 2027, Shorts ad revenue each month needs 10M qualified Shorts views in the last 90 days.</li>
+          </ul>
+        </div>
+        <div class="panel">
+          <span class="status wait">Invite-only</span>
+          <h3>Facebook</h3>
+          <ul>
+            <li>Content Monetization pays for Reels, videos, photos, text and Stories, but is invite-only. Express interest in Professional Dashboard &gt; Monetization.</li>
+            <li>No public threshold and no public country list.</li>
+            <li>Stars from 500 followers (30 days). Subscriptions from 5,000.</li>
+            <li>Creator Fast Track is only for US, Canada, UK and Australia residents.</li>
+          </ul>
+        </div>
+        <div class="panel">
+          <span class="status reach">Reach engine</span>
+          <h3>Instagram + Threads</h3>
+          <ul>
+            <li>Post the same Reel from Meta Business Suite to the Page and Instagram.</li>
+            <li>Threads profile comes from Instagram. The Threads API can post 9:16 video up to 5 minutes.</li>
+            <li>Use them for followers that feed the Facebook Page and YouTube.</li>
+          </ul>
+        </div>
+      </div>
+      <div class="panel">
+        <h3>Rules that protect your earnings</h3>
+        <ul>
+          <li><strong>Make it yourself.</strong> Meta: "Content filmed or produced directly by a creator or owner of a Profile or Page is considered original content." Stitched clips, narrating someone else's footage and minor edits get deprioritized and can be demonetized.</li>
+          <li><strong>No slideshow look.</strong> YouTube won't monetize "image slideshows, templated storylines ... with minimal or no narrative" or AI content "giving the impression of mass production".</li>
+          <li><strong>Your own cloned voice needs no AI label on YouTube.</strong> YouTube lists "cloning one's own voice to create voice overs or dubs" as fine without disclosure. Animation also needs none. Disclosing never limits reach or earnings.</li>
+          <li><strong>Not made for kids.</strong> Cartoon style alone is fine ("animated content that appeals to everyone" is general audience). Avoid kid themes.</li>
+          <li><strong>No licensed label music in Shorts.</strong> It shrinks your share of the revenue pool.</li>
+          <li><strong>Same video, all your platforms.</strong> Meta: "You can share the same content across any of your Pages or profiles." Never post the same video twice on one platform. No visible third-party watermarks.</li>
+        </ul>
+      </div>
+      <p class="note warn">Shorts pay little per view. Once a series has 8-12 episodes, turn it into an 8-12 minute compilation with a new intro and new narration between stories. YouTube does not monetize compilations with nothing new added.</p>
+    </section>
+
+    <section id="trends">
+      <div class="kicker">Inspiration only, never copies</div>
+      <h2>Trend radar</h2>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>Format</th><th>Example pages</th><th>Why it works</th><th>Effort</th></tr></thead>
+          <tbody>
+            <tr><td>2D mascot curiosity stories</td><td>Ricks Clips: 144K subs, top Shorts 3M-31M views</td><td>Curiosity title, story with a twist, a face to follow</td><td>Low-medium</td></tr>
+            <tr><td>3D "what would happen" Shorts</td><td>Zack D. Films 29M; Zeck Felms 1.22M (started 2025)</td><td>Big curiosity. Newcomers still break in</td><td>Medium-high</td></tr>
+            <tr><td>Stickman explainers</td><td>The Paint Explainer 2.01M; Mack 89.5K (started May 2026)</td><td>Called the fastest-growing faceless format of 2026 (vendor claim). Long-form pays more</td><td>Low art, high script</td></tr>
+            <tr><td>Animated horror and true stories</td><td>Horror Shorts Party 1.68M</td><td>Dread plus specific titles</td><td>Medium</td></tr>
+            <tr><td>What-if hypotheticals</td><td>What If 8.9M</td><td>Endless topics</td><td>Medium</td></tr>
+            <tr><td>Animated comedy skits</td><td>Beluga 11.2M</td><td>Shareable, but hard to write</td><td>High</td></tr>
+            <tr><td>Mini-docs (90 s-3 min)</td><td>No channels named in sources</td><td>Mysteries and origin stories</td><td>Medium</td></tr>
+            <tr><td>Template memes</td><td>"Twins at the Carousel" (June 2026)</td><td>Fast reach, saturates fast</td><td>Low, weak for a brand</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="small">Subscriber counts from TaleTok and OutlierKit (vendor blogs, October 2026) and YouTube (Ricks Clips, checked 2026-11-05). Being demoted in 2026: AI narration over stock footage, plain image slideshows, reposted clips.</p>
+    </section>
+
+    <section id="ideas">
+      <div class="kicker">Original concepts for Page #1</div>
+      <h2>Page ideas</h2>
+      <div class="ideas">
+        <article class="idea pick">
+          <div class="idea-head"><h3>Time Intern</h3><span class="pill">Recommended</span></div>
+          <p>An unpaid intern at the Department of Weird History gets zapped into a different moment in history every episode and files a report on the strangest job, loophole or invention he finds.</p>
+          <dl>
+            <dt>Series</dt><dd>Worst Shift Ever &middot; Loophole Logged &middot; Lost Tech &middot; Why It's Like That &middot; Lost Genius</dd>
+            <dt>Why</dt><dd>A reason for the mascot to be in every era, humor for shares, "Shift #" numbering for bingeing, all of history as a topic pool.</dd>
+          </dl>
+        </article>
+        <article class="idea">
+          <div class="idea-head"><h3>The Hidden Why</h3></div>
+          <p>A tiny curious character asks why everyday things are the way they are.</p>
+          <dl><dt>Why</dt><dd>Evergreen and search-friendly.</dd><dt>Risk</dt><dd>Crowded, less drama.</dd></dl>
+        </article>
+        <article class="idea">
+          <div class="idea-head"><h3>Loophole Lou</h3></div>
+          <p>A sly little character in a fedora explains history's smartest loopholes, hacks and heists.</p>
+          <dl><dt>Why</dt><dd>Highest curiosity and shares.</dd><dt>Risk</dt><dd>Smaller pool, some topics get limited ads.</dd></dl>
+        </article>
+        <article class="idea">
+          <div class="idea-head"><h3>Stickman long-form</h3></div>
+          <p>"Every ___ Explained" stickman videos of 10-15 minutes, cut into Shorts. A good Page #2 for YouTube watch hours.</p>
+          <dl><dt>Why</dt><dd>Fast-growing format, higher pay per view.</dd><dt>Risk</dt><dd>Heavy scripting.</dd></dl>
+        </article>
+      </div>
+      <div class="cols">
+        <div class="panel">
+          <h3>Title formulas</h3>
+          <ul>
+            <li>Why [Normal Thing] [Has Unexpected Detail]</li>
+            <li>The [Object] That [Huge Consequence]</li>
+            <li>The [Person] Paid to [Weird Task]</li>
+            <li>The [Place] That [Impossible-Sounding Fact]</li>
+            <li>How a [Small Thing] [Fooled / Saved] [Big Thing]</li>
+            <li>The [War / Job / Rule] That Lasted Only [Tiny Number]</li>
+          </ul>
+          <p class="small">3-7 words, concrete nouns, no false promises.</p>
+        </div>
+        <div class="panel">
+          <h3>First story leads (fact-check each)</h3>
+          <ul>
+            <li>The Woman Paid to Shoot Peas at Windows</li>
+            <li>Why Coins Have Tiny Ridges</li>
+            <li>The Fake Town That Became Real</li>
+            <li>The Board Game That Smuggled Escape Maps</li>
+            <li>He Kept Fighting for 29 Years</li>
+            <li>The Tower That Cooled Houses Without Power</li>
+            <li>Why Airplane Windows Are Round</li>
+          </ul>
+          <p class="small">20 leads with the story behind each are in research/02-trend-radar.md.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="social">
+      <div class="kicker">You log in, the chat guides</div>
+      <h2>Accounts and posting</h2>
+      <div class="cols">
+        <div class="panel">
+          <h3>Account checklist</h3>
+          <ul class="checks">
+            <li>Facebook Page: rename, brand, category, professional mode.</li>
+            <li>Instagram professional account linked in Accounts Center.</li>
+            <li>Threads profile created from Instagram.</li>
+            <li>YouTube channel with the handle, banner, avatar, verified phone.</li>
+            <li>YouTube upload defaults: not made for kids (when true), AI use per the rules.</li>
+            <li>Facebook: express interest in Content Monetization.</li>
+            <li>2-Step Verification on every account.</li>
+          </ul>
+        </div>
+        <div class="panel">
+          <h3>Posting, free first</h3>
+          <ol>
+            <li><strong>Now:</strong> Meta Business Suite (Facebook + Instagram), the Threads app, YouTube Studio scheduling.</li>
+            <li><strong>Later:</strong> self-host Postiz (AGPL-3.0, about 40K stars, public API, 30+ platforms) for one dashboard.</li>
+            <li><strong>Experiment:</strong> Posthive (AGPL-3.0, built-in MCP so Claude can schedule posts directly). Very new, 18 stars.</li>
+          </ol>
+          <p class="small">Both self-hosted tools need your own developer app on Meta, Google and TikTok. A Meta app must be set to Live or posts are visible only to you.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="week">
+      <div class="kicker">4-5 videos a week next to a day job</div>
+      <h2>Weekly rhythm</h2>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>When</th><th class="num">Time</th><th>Work</th></tr></thead>
+          <tbody>
+            <tr><td>Mon-Thu evenings</td><td class="num">15 min/day</td><td>Reply to comments, note topic ideas</td></tr>
+            <tr><td>Friday</td><td class="num">30 min</td><td>Weekly review chat</td></tr>
+            <tr><td>Saturday morning</td><td class="num">2-3 h</td><td>Weekly batch: topics, sources, scripts, shot lists</td></tr>
+            <tr><td>Saturday afternoon</td><td class="num">2-3 h</td><td>Generate all Flow assets and Higgsfield narrations</td></tr>
+            <tr><td>Sunday</td><td class="num">3-4 h</td><td>Assemble, covers, captions, schedule the week</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="small">About 8-11 hours a week to start. Templates make it faster. Posting times default to US Eastern evenings, which is early morning in Dubai, so scheduling matters.</p>
+    </section>
+
+    <section id="rules">
+      <div class="kicker">Written into CLAUDE.md</div>
+      <h2>House rules</h2>
+      <div class="prose">
+        <ul>
+          <li>Type in Tagalog or Taglish any time. Answers are always in English, simple, with no em dashes.</li>
+          <li>Questions come as multiple choice with the recommended option first.</li>
+          <li>Other pages inspire formats only. Never their clips, scripts, characters, names, titles or thumbnails.</li>
+          <li>Every factual claim has 2 sources saved in the episode brief.</li>
+          <li>Flow budget per video: 150 credits unless you approve more. Every generation is logged.</li>
+          <li>The AI never types your passwords or 2FA codes and asks before installs, deletions or spending.</li>
+          <li>Every chat reads ai-handoff-summary.md first and updates both handoff files at the end.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="kit">
+      <div class="kicker">Built to grow</div>
+      <h2>Improve the kit</h2>
+      <div class="cols">
+        <div class="panel">
+          <h3>The loop</h3>
+          <ol>
+            <li><strong>Make videos</strong> with the studio. Handoff files record what worked and what failed.</li>
+            <li><strong>Retro:</strong> give the main chat the folders. It proposes kit changes; you pick.</li>
+            <li><strong>Release:</strong> the kit gets a new version, a changelog entry and a rebuilt manual, then a git push.</li>
+            <li><strong>Update:</strong> each studio runs the update-kit prompt. Page data is never touched.</li>
+          </ol>
+        </div>
+        <div class="panel">
+          <h3>How it stays scalable</h3>
+          <ul>
+            <li>One skill, one job. A router skill decides the order, so new skills slot in.</li>
+            <li>Tools are swappable routes. No page depends on one editor.</li>
+            <li>Bigger features ship as modules that are off until a studio turns them on.</li>
+            <li>Versions follow patch / minor / major, with migration steps in the changelog.</li>
+            <li>Every platform rule has a "checked" date and a monthly re-check.</li>
+          </ul>
+        </div>
+      </div>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>File</th><th>Job</th></tr></thead>
+          <tbody>
+            <tr><td><code>VERSION</code></td><td>Current kit version. Studios keep theirs in <code>.kit-version</code>.</td></tr>
+            <tr><td><code>CHANGELOG.md</code></td><td>What changed per version, with migration steps</td></tr>
+            <tr><td><code>ROADMAP.md</code></td><td>Next: HyperFrames series templates, posting automation module, long-form compiler, analytics import, dubbing</td></tr>
+            <tr><td><code>kit/manifest.json</code></td><td>List of skills, prompts, templates and tools with the version each arrived in</td></tr>
+            <tr><td><code>kit/EXTENDING.md</code></td><td>How to add a skill, prompt or module and release it</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section id="skills">
+      <div class="kicker">kit/skills, copied to .claude/skills</div>
+      <h2>Skills</h2>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>Skill</th><th>Job</th></tr></thead>
+          <tbody>
+            <tr><td><code>page-factory</code></td><td>Router: reading order, modes, stop points</td></tr>
+            <tr><td><code>trend-radar</code></td><td>Trending formats and topics, inspiration only</td></tr>
+            <tr><td><code>topic-picker</code></td><td>5 topic options, or 3 week plans</td></tr>
+            <tr><td><code>fact-checker</code></td><td>2 sources per claim, myths dropped</td></tr>
+            <tr><td><code>script-writer</code></td><td>5-beat scripts, titles, long-form compilations</td></tr>
+            <tr><td><code>mascot-bible</code></td><td>Original mascot, prompt block, brand art, bios</td></tr>
+            <tr><td><code>shot-planner</code></td><td>Shot list, Flow prompts, credit budget</td></tr>
+            <tr><td><code>voice-director</code></td><td>TTS text, Higgsfield or Chatterbox, loudness</td></tr>
+            <tr><td><code>video-assembler</code></td><td>Captions, HyperFrames / Remotion / CapCut / ffmpeg, QA</td></tr>
+            <tr><td><code>thumbnail-maker</code></td><td>Covers and YouTube thumbnails</td></tr>
+            <tr><td><code>publisher</code></td><td>Captions, disclosure, schedule, posting checklist</td></tr>
+            <tr><td><code>analytics-review</code></td><td>Weekly numbers, decisions, monetization tracker</td></tr>
+            <tr><td><code>handoff</code></td><td>handoff.md and ai-handoff-summary.md continuity</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section id="sources">
+      <div class="kicker">Checked 2026-11-05</div>
+      <h2>Sources</h2>
+      <div class="sources">
+        <div class="panel">
+          <h3>Meta</h3>
+          <ul>
+            <li><a href="https://creators.facebook.com/tools/facebook-content-monetization">Facebook Content Monetization</a></li>
+            <li><a href="https://about.fb.com/news/2026/03/creator-fast-track-grow-your-audience-earn-money-on-facebook/">Creator Fast Track (Mar 2026)</a></li>
+            <li><a href="https://creators.facebook.com/creator-fast-track">Creator Fast Track eligibility</a></li>
+            <li><a href="https://about.fb.com/news/2026/03/rewarding-original-creators-on-facebook/">Rewarding original creators (Mar 2026)</a></li>
+            <li><a href="https://creators.facebook.com/blog/combating-unoriginal-content/">Combating unoriginal content (Jul 2025)</a></li>
+            <li><a href="https://developers.facebook.com/documentation/threads/overview">Threads API</a></li>
+          </ul>
+        </div>
+        <div class="panel">
+          <h3>YouTube and Google</h3>
+          <ul>
+            <li><a href="https://support.google.com/youtube/answer/72851">YouTube Partner Program</a></li>
+            <li><a href="https://support.google.com/youtube/answer/7101720">YPP countries</a></li>
+            <li><a href="https://support.google.com/youtube/answer/1311392">Monetization policies (inauthentic content)</a></li>
+            <li><a href="https://support.google.com/youtube/answer/14328491">AI disclosure</a></li>
+            <li><a href="https://support.google.com/youtube/answer/12504220">Shorts revenue sharing</a></li>
+            <li><a href="https://support.google.com/youtube/answer/9528076">Made for kids</a></li>
+            <li><a href="https://support.google.com/flow/answer/16526234">Flow credits</a></li>
+            <li><a href="https://support.google.com/flow/answer/16352836">Flow models and features</a></li>
+          </ul>
+        </div>
+        <div class="panel">
+          <h3>Tools</h3>
+          <ul>
+            <li><a href="https://github.com/heygen-com/hyperframes">HyperFrames</a></li>
+            <li><a href="https://github.com/calesthio/OpenMontage">OpenMontage</a></li>
+            <li><a href="https://www.remotion.dev/docs/license/faq">Remotion license FAQ</a></li>
+            <li><a href="https://higgsfield.ai/voice-cloning">Higgsfield voice cloning</a></li>
+            <li><a href="https://github.com/resemble-ai/chatterbox">Chatterbox</a></li>
+            <li><a href="https://github.com/sun-guannan/VectCutAPI">VectCutAPI</a></li>
+            <li><a href="https://github.com/gitroomhq/postiz-app">Postiz</a> and <a href="https://docs.postiz.com/public-api">Postiz API</a></li>
+            <li><a href="https://github.com/AstaBlackClove/posthive">Posthive</a></li>
+          </ul>
+        </div>
+        <div class="panel">
+          <h3>Trends (vendor blogs, treat numbers as claims)</h3>
+          <ul>
+            <li><a href="https://www.youtube.com/@RicksClips3000">Ricks Clips on YouTube</a></li>
+            <li><a href="https://taletok.io/blog/best-faceless-youtube-channels/">TaleTok: best faceless channels 2026</a></li>
+            <li><a href="https://outlierkit.com/resources/faceless-youtube-growth-strategy/">OutlierKit: faceless growth strategy</a></li>
+            <li><a href="https://www.anijam.ai/blog/youtube-shorts-trends/">Anijam: Shorts trends</a></li>
+            <li><a href="https://kineclip.com/blog/short-form-video-trends-2026/">Kineclip: short-form trends 2026</a></li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      Page Factory {{VERSION}} &middot; <a href="https://github.com/KuyaLoy/page-factory">github.com/KuyaLoy/page-factory</a> &middot; built with Claude for Loy &middot; Update this page: edit <code>docs-src/manual.src.html</code> or a prompt file, then run <code>python tools/build_manual.py</code>.
+    </footer>
+  </main>
+</div>
+<script>
+(function () {
+  function select(el) {
+    var range = document.createRange();
+    range.selectNodeContents(el);
+    var sel = window.getSelection();
+    sel.removeAllRanges();
+    sel.addRange(range);
+  }
+  document.querySelectorAll("button[data-copy]").forEach(function (btn) {
+    btn.addEventListener("click", function () {
+      var el = document.getElementById(btn.getAttribute("data-copy"));
+      if (!el) return;
+      var text = el.textContent;
+      var done = function (label) {
+        btn.textContent = label;
+        setTimeout(function () { btn.textContent = "Copy"; }, 1800);
+      };
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(text).then(function () { done("Copied"); }, function () { select(el); done("Press Ctrl+C"); });
+      } else {
+        select(el);
+        done("Press Ctrl+C");
+      }
+    });
+  });
+})();
+</script>
