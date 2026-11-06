@@ -1,0 +1,210 @@
+@import 'tailwindcss';
+@import '@fontsource-variable/geist';
+@import '@fontsource-variable/geist-mono';
+
+@theme {
+  --color-ink: #101211;
+  --color-ink-2: #161917;
+  --color-ink-3: #1f2320;
+  --color-line: #2c312d;
+  --color-ivory: #f7f6f0;
+  --color-ivory-2: #ecebe2;
+  --color-stone: #545852;
+  --color-lime: #d5ff35;
+  --color-lime-2: #c3ee1f;
+  --color-mute: #a7aaa2;
+
+  --font-sans: 'Geist Variable', ui-sans-serif, system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --font-mono: 'Geist Mono Variable', ui-monospace, 'SFMono-Regular', Menlo, Consolas, monospace;
+
+  --ease-out-quint: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+@layer base {
+  html {
+    color-scheme: dark;
+    -webkit-text-size-adjust: 100%;
+    background: var(--color-ink);
+    scrollbar-gutter: stable;
+  }
+
+  /* The page behind an open dialog stays put. */
+  html:has(dialog[open]) {
+    overflow: hidden;
+  }
+
+  body {
+    background: var(--color-ink);
+    color: var(--color-ivory);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+  }
+
+  ::selection {
+    background: var(--color-lime);
+    color: var(--color-ink);
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--color-lime);
+    outline-offset: 3px;
+  }
+
+  .on-ivory :focus-visible {
+    outline-color: var(--color-ink);
+  }
+
+  [id] {
+    scroll-margin-top: 5rem;
+  }
+
+  dialog::backdrop {
+    background: rgb(16 18 17 / 0.72);
+    backdrop-filter: blur(4px);
+  }
+}
+
+@layer components {
+  .eyebrow {
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    line-height: 1rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  .display {
+    font-weight: 640;
+    letter-spacing: -0.045em;
+    line-height: 0.92;
+  }
+
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    min-height: 2.75rem;
+    padding: 0 1.15rem;
+    border-radius: 999px;
+    font-weight: 560;
+    font-size: 0.95rem;
+    white-space: nowrap;
+    transition:
+      background-color 160ms ease,
+      color 160ms ease,
+      border-color 160ms ease,
+      transform 160ms ease;
+  }
+
+  .btn:active {
+    transform: translateY(1px);
+  }
+
+  .btn-lime {
+    background: var(--color-lime);
+    color: var(--color-ink);
+  }
+
+  .btn-ghost {
+    border: 1px solid var(--color-line);
+    color: var(--color-ivory);
+  }
+
+  .btn-ink {
+    background: var(--color-ink);
+    color: var(--color-ivory);
+  }
+
+  .btn-outline-ink {
+    border: 1px solid rgb(16 18 17 / 0.28);
+    color: var(--color-ink);
+  }
+
+  @media (hover: hover) {
+    .btn-lime:hover {
+      background: var(--color-lime-2);
+    }
+    .btn-ghost:hover {
+      border-color: var(--color-mute);
+    }
+    .btn-ink:hover {
+      background: #262a27;
+    }
+    .btn-outline-ink:hover {
+      border-color: var(--color-ink);
+    }
+  }
+
+  .btn-sm {
+    min-height: 2.25rem;
+    padding: 0 0.9rem;
+    font-size: 0.875rem;
+  }
+
+  .card-frame {
+    border-radius: 1.1rem;
+    overflow: hidden;
+    background: var(--color-ink-3);
+    box-shadow:
+      0 0 0 1px rgb(255 255 255 / 0.06),
+      0 30px 60px -30px rgb(0 0 0 / 0.8);
+  }
+
+  .panel {
+    border-radius: 0.9rem;
+    background: rgb(22 25 23 / 0.92);
+    box-shadow:
+      0 0 0 1px rgb(255 255 255 / 0.07),
+      0 24px 48px -24px rgb(0 0 0 / 0.75);
+  }
+
+  .caption-chip {
+    display: inline;
+    padding: 0.08em 0.3em;
+    border-radius: 0.25em;
+    background: var(--color-ink);
+    color: var(--color-ivory);
+    box-decoration-break: clone;
+    -webkit-box-decoration-break: clone;
+  }
+
+  .grid-lines {
+    background-image:
+      linear-gradient(to right, rgb(255 255 255 / 0.035) 1px, transparent 1px),
+      linear-gradient(to bottom, rgb(255 255 255 / 0.035) 1px, transparent 1px);
+    background-size: 48px 48px;
+  }
+
+  /* A full-width scroller whose first card lines up with the 1240px content column. */
+  .bleed-x {
+    padding-inline: max(1rem, calc((100% - 1240px) / 2 + 1rem));
+    scroll-padding-inline: max(1rem, calc((100% - 1240px) / 2 + 1rem));
+  }
+
+  @media (min-width: 640px) {
+    .bleed-x {
+      padding-inline: max(1.5rem, calc((100% - 1240px) / 2 + 1.5rem));
+      scroll-padding-inline: max(1.5rem, calc((100% - 1240px) / 2 + 1.5rem));
+    }
+  }
+
+  .scrollbar-none {
+    scrollbar-width: none;
+  }
+
+  .scrollbar-none::-webkit-scrollbar {
+    display: none;
+  }
+
+  .sr-only-focusable:not(:focus) {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip-path: inset(50%);
+    white-space: nowrap;
+  }
+}

@@ -3,6 +3,28 @@
 All notable changes to the Page Factory kit. Versions follow SemVer (see kit/EXTENDING.md).
 Studios upgrade with prompts/update-kit.md, which runs the Migration steps of every skipped version.
 
+## 1.3.0 (2026-11-06)
+A new landing page, Project Factory, built as a small React site in site/ and deployed by GitHub Actions.
+The kit itself is unchanged: prompts, skills, templates and research are the same as 1.2.1.
+- New site in site/: React, TypeScript and Vite, Tailwind CSS, GSAP ScrollTrigger for one pinned "how a
+  video gets made" scene, Motion for small UI transitions, Lucide icons. No server, no API, no secrets.
+- First screen with "Copy master prompt" (copies the exact paste block) and a download of the full
+  MASTER-PROMPT.md.
+- An illustrated walk through one video: the prompt, then script, voice and shots on a timeline, then a
+  finished 9:16 frame. It becomes stacked cards on phones, touch screens and with "reduce motion".
+- Honest setup steps and costs, sample frames, a searchable prompt library built from the real prompt
+  files (copy, download, view on GitHub), and a short FAQ.
+- Sample pictures and clips made with Google Flow for the site (Nano Banana Pro, Veo 3.1 Quality), credited
+  in ASSET-LICENSES.md, with the prompts in ASSET-REQUESTS.md and VIDEO-REQUESTS.md.
+- The v1.2 hand-drawn page lives on as the full guide at /manual/. Old picture links under /assets/ and old
+  #p-... and #faq-... links still work.
+- .github/workflows/pages.yml builds site/ and deploys it to GitHub Pages.
+- The site is branded Project Factory. The repository, kit files and skills keep the name Page Factory.
+
+Migration: none for studios. Maintainers: switch Settings > Pages > Source to "GitHub Actions" once; after
+that every push to main deploys. Run python tools/build_manual.py after changing docs-src/, and npm run media
+in site/ after adding pictures or clips.
+
 ## 1.2.1 (2026-11-05)
 Research merge. A second research pass re-checked 25 claims on official Meta, YouTube and Google pages
 (23 confirmed, 2 refuted). What changed in the kit:
