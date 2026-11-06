@@ -13,13 +13,13 @@ How to add features without breaking studios that already run the kit.
 1. Create kit/skills/<name>/SKILL.md with frontmatter: name, description (when to use it).
 2. Add it to kit/manifest.json under "skills" with "since": "<new version>".
 3. Add it to the Modes table in kit/skills/page-factory/SKILL.md and to any prompt that should run it.
-4. Bump VERSION (minor), add a CHANGELOG.md entry, rebuild the manual.
+4. Bump VERSION (minor), add a CHANGELOG.md entry, run python tools/build_manifest.py.
 
 ## Add a prompt
-1. Create prompts/<name>.md with one ```text block. That block is exactly what the manual's copy
-   button copies.
-2. Add it to kit/manifest.json "prompts", to the README table and to docs-src/manual.src.html
-   (a new prompt card with a {{PROMPT:<KEY>}} placeholder), and to PROMPTS in tools/build_manual.py.
+1. Create prompts/<name>.md with one ```text block. That block is exactly what the site's copy
+   buttons copy (the site reads the file itself at build time).
+2. Add it to the README table and to the list in site/src/content/prompts.ts (label, group, when to use,
+   summary). Run python tools/build_manifest.py to add it to kit/manifest.json.
 
 ## Add a module (bigger feature)
 - Folder kit/modules/<name>/ with README.md (what it does, setup, cost, licenses), plus its own skills/,
@@ -35,7 +35,7 @@ How to add features without breaking studios that already run the kit.
 
 ## Release checklist
 1. VERSION, CHANGELOG.md (with Migration notes), kit/manifest.json.
-2. python tools/build_manual.py
+2. python tools/build_manifest.py
 3. git add -A
    git commit -m "vX.Y.Z: <summary>"
    git push

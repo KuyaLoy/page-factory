@@ -3,6 +3,47 @@
 All notable changes to the Page Factory kit. Versions follow SemVer (see kit/EXTENDING.md).
 Studios upgrade with prompts/update-kit.md, which runs the Migration steps of every skipped version.
 
+## 1.4.0 (2026-11-06)
+A video model choice, optional Flow automation and the KuyaLoy signature on by default. The full guide is
+rebuilt in the Project Factory brand, and the sample clips now move.
+Kit:
+- Video model: motion shots use Flow's default video model, Omni 1.1 Flash (7 to 15 credits a clip).
+  Setup (Round E) lets the owner pick Veo 3.1 Lite, Fast or Quality instead, each shown with its credit
+  cost, and any single shot can still be switched. shot-planner uses the studio's model and keeps Veo 3.1
+  Quality for proven hero shots, only when the owner picks it. Costs seen in the Flow app on 2026-11-06 are
+  in research/03.
+- Flow automation (optional): setup asks whether to use flow-mcp (github.com/GTAI-1/flow-mcp), a
+  third-party tool the owner installs from its own README. It's off by default and the kit never installs
+  it. When it's on, shot-planner shows the shots, models and total credits and waits for OK, sets a credit
+  cap per shot, downloads into raw/, never regenerates because a download failed, and asks before any
+  retry. Its README's warnings (it can break when Flow changes; automated use may be against Google's
+  terms) are in research/03 and are said at setup.
+- KuyaLoy signature: on by default now. Setup always tells the owner, who can keep it, use their own name
+  or handle, or turn it off (the "Easter egg:" line in page.md). It's never hidden from the owner.
+- tools/build_manifest.py replaces tools/build_manual.py: the old guide is gone, so only kit/manifest.json
+  is rebuilt. kit/EXTENDING.md and prompts/retro.md point to it.
+Site:
+- The full guide at /manual/ is rebuilt in the Project Factory brand: what you need, opening your folder,
+  every step of day one, every video and every week (with copy buttons), all 9 prompts (copy, download,
+  GitHub), the questions people ask and the research files with their dates. The v1.2 hand-drawn page and
+  its source (docs/, docs-src/) are removed, so old links under /manual/assets/ and /assets/ stop working.
+- New sample clips with obvious motion, made in Flow with Veo 3.1 Quality: a drone glide, a walk-through,
+  a push-in, a time-lapse and slow motion. All five gallery cards play, muted, while they're on screen; the
+  hero uses the drone clip.
+- npm run media: loops start one second in and crossfade their last second into it, each poster is its
+  loop's first frame, and clips are capped at about 1.6 Mbit/s. Video originals stay out of git.
+- FAQ answers for the video model, Flow automation and the signature. Footer: "Made by KuyaLoy with Claude".
+
+Migration: copy kit/skills/hq-setup/SKILL.md and kit/skills/shot-planner/SKILL.md into .claude/skills/
+(same folders). In studio.md, add "model: Omni 1.1 Flash (default)" to the Notes of the Motion clips row and
+add the "Flow automation" row from kit/templates/studio.md set to "off", unless the owner asks for another
+model or for flow-mcp. In CLAUDE.md, the Kit line now reads "Kit (templates, skills, research, prompts)".
+Leave the "Easter egg:" line in each page.md as it is: the owner already chose. Tell the owner that the
+signature is on by default for new pages and that they can change theirs any time, and that flow-mcp is
+optional and theirs to install. Maintainers: run python tools/build_manifest.py after kit changes. Video
+originals are no longer tracked: run git rm --cached site/assets-src/originals/pf-loop-lake.mp4
+site/assets-src/originals/pf-loop-waterfall.mp4 once (the files stay on disk).
+
 ## 1.3.0 (2026-11-06)
 A new landing page, Project Factory, built as a small React site in site/ and deployed by GitHub Actions.
 The kit itself is unchanged: prompts, skills, templates and research are the same as 1.2.1.

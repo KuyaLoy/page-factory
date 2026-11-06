@@ -1,35 +1,40 @@
 # AI handoff summary: Page Factory kit + Project Factory site
-Updated: 2026-11-06 14:20 UTC | By: Claude (Cowork), AI Video Planner project chat
-Last change: v1.3.0, Project Factory landing page in site/ with a GitHub Actions deploy, copied into D:
+Updated: 2026-11-06 19:30 UTC | By: Claude (Cowork), AI Video Planner project chat
+Last change: v1.4.0 built, tested and copied into D: (not pushed yet)
 Status: ACTIVE
 
 ## Now
-- v1.3.0 is in D:\claude-ai-video-edit\page-factory, not committed or pushed. Live site still v1.2.1.
-- Waiting on: Loy to set Pages Source to GitHub Actions, then commit and push from Git Bash.
+- v1.4.0 is ready in D:\claude-ai-video-edit\page-factory; live site still v1.3.0 (03f7269).
+- Waiting on: Loy to commit and push (commands in handoff.md > Next Steps; includes git rm --cached for
+  the two old video originals).
 
 ## Next action
-- After Loy pushes: check the Actions run and the live site (/ and /manual/), then PageSpeed 3 times.
+- After Loy pushes: check the live site, run pf-interact.cjs on the live URL, PageSpeed 3 times.
 
 ## Verified facts
-- origin/main ba2a326 = v1.2.1 [verified 2026-11-06 13:01 UTC: git ls-remote]
-- Files replaced in D: matched HEAD before the copy [verified 2026-11-06: device compare vs git cat-file]
-- Site: 41/41 Playwright behaviour checks pass, no console errors [verified 2026-11-06: pf-interact.cjs]
-- No horizontal scroll at 375/390/412/768; pin only at >=1024x680 with mouse [verified 2026-11-06: Playwright]
-- First load 0.31 MB phone, 0.38 MB desktop + 0.68 MB hero clip after load [verified 2026-11-06: Playwright]
-- Clean npm ci + npm run build works; dist 16 MB [verified 2026-11-06: fresh copy build]
-- Flow: 5 posters 0 credits; 2 Veo 3.1 Quality clips 100 credits each, Loy approved [verified 2026-11-06: Flow UI]
-- Actions: checkout@v7, setup-node@v7, configure-pages@v6, upload-pages-artifact@v5, deploy-pages@v5 [verified 2026-11-06: ls-remote]
-- Pages: site up to 1 GB, deploy timeout 10 min, files over 100 MiB blocked [verified 2026-11-06: GitHub Docs]
-- 45% Shorts revenue share [unverified: could not re-confirm, re-read Help 12504220]
-- TikTok monetization rules [unverified: help pages unreadable by fetch tools]
+- v1.4.0: 59/59 Playwright checks, no console errors at 375/768/1024/1440 on home and /manual/
+  [verified 2026-11-06 ~19:15 UTC: production build, pf-interact.cjs, pf-check.cjs]
+- Clean clone + npm ci + npm run build works; only site/public/media/*.mp4 are tracked mp4s
+  [verified 2026-11-06 ~19:20 UTC: fresh git clone in the cloud]
+- D: copy matches the cloud copy file by file; docs/, docs-src/, build_manual.py, sync-content.mjs deleted
+  there with Loy's permission [verified 2026-11-06 ~19:25 UTC: CRLF-normalized hash lists]
+- Flow: 5 Veo 3.1 Quality clips, 100 credits each, approved by Loy, seen finished, frame-checked
+  [verified 2026-11-06: Flow UI, frame sheets]
+- Flow video costs (9:16, 720p, 8 s): Omni 1.1 Flash 12, Veo 3.1 Lite 10, Fast 20, Quality 100
+  [verified 2026-11-06: Flow app]
+- Pages source = GitHub Actions [verified 2026-11-06 14:26 UTC]
+- v1.3.0 PageSpeed: mobile 98-100, desktop 99-100 [verified 2026-11-06: pagespeed.web.dev]
+- flow-mcp license [unverified: not stated in its README]
+- 45% Shorts revenue share [unverified]; TikTok monetization rules [unverified]
 
 ## Key paths
-- handoff.md: full record ("Project Factory site: decisions" holds the design, brief rules, Flow notes)
-- site/: the landing page; site/README.md has commands; src/content/prompts.ts reads the prompt files
-- site/assets-src/originals/: Flow masters; npm run media makes public/media/
-- .github/workflows/pages.yml: build site/ and deploy to Pages
-- ASSET-REQUESTS.md, VIDEO-REQUESTS.md, ASSET-LICENSES.md: how the media was made and its sources
-- docs-src/manual.src.html + tools/build_manual.py: the v1.2 guide, served at /manual/
+- handoff.md: full record (decisions, Flow notes, failed attempts, next steps)
+- site/: landing page (index.html) + guide (manual/index.html, src/guide/, src/content/guide.ts)
+- site/scripts/optimize-media.mjs: loops start at frame 24, poster = that frame, bitrate cap
+- site/assets-src/originals/: posters in git; pf-loop-*.mp4 originals local only (gitignored)
+- kit/skills/hq-setup + shot-planner, kit/templates/studio.md + page/page.md: model, flow-mcp, signature
+- tools/build_manifest.py: rebuild kit/manifest.json after kit changes
+- ASSET-REQUESTS.md, VIDEO-REQUESTS.md (V3-V7 prompts), ASSET-LICENSES.md
 - D:\claude-ai-video-edit\page-factory: Loy's repo (he runs git there)
 
 ## Rules for this project
@@ -40,15 +45,15 @@ Status: ACTIVE
 - Never call a video generated until it is seen. Downloads need OK (name, source, size).
 - Never close Loy's Chrome tabs. No hotlinked Flow URLs. No keys in VITE_ vars or the bundle.
 - No commit, push or publish without Loy's OK. No index-writing git in the device shell (lock files).
+- Never install flow-mcp for Loy or any kit user; the signature is never hidden from kit users.
 - Surgical edits. Kit keeps the name Page Factory; only the site says Project Factory.
-- Site: no anime.js, Lenis or Three.js; GSAP and Motion never animate the same element.
 - Update both handoff files after big changes and before ending a session.
 
 ## Open questions
 - Domain name for the site (Loy will buy one; then VITE_BASE=/)
-- TikTok monetization rules and countries (check official pages in a browser)
+- TikTok monetization rules; flow-mcp license; flow-mcp on a real Windows PC
 
 ## Where to look in handoff.md
-- Design, brief rules, Flow costs and download options: handoff.md > Project Factory site: decisions
-- Known traps (lock files, CRLF, proxy, layout bugs, loop seams): handoff.md > Failed Attempts
-- Push and deploy steps: handoff.md > Next Steps
+- Current state and Loy's v1.4 choices: handoff.md > Current State
+- Flow tips (viewer download spots, prompts that read as motion): handoff.md > Project Factory site: decisions
+- Known traps (lock files, loop seams, poster jumps, repo size): handoff.md > Failed Attempts

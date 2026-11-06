@@ -5,7 +5,7 @@ Rules for every chat in this studio. The HQ setup chat fills in the <placeholder
 ## What this is
 - Owner: <name>. Faceless short-form video pages for Facebook, Instagram, Threads, YouTube Shorts
   and TikTok. Details about the owner and tools: studio.md. Details per page: pages/<slug>/page.md.
-- Kit (templates, skills, research, manual): page-factory/. Kit version in use: .kit-version.
+- Kit (templates, skills, research, prompts): page-factory/. Kit version in use: .kit-version.
 - Active pages: <slug: page name>.
 
 ## Language and style

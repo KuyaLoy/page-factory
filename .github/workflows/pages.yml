@@ -37,7 +37,7 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
-      - name: Build (also copies docs/ into the site as /manual/ and /assets/)
+      - name: Build the site (home page and /manual/ guide)
         run: npm run build
 
       - name: Configure Pages

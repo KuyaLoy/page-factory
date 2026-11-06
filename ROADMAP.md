@@ -2,9 +2,11 @@
 
 Ideas, not promises. Retros (prompts/retro.md) add to this list.
 
-## Next (v1.4)
+## Next (v1.5)
 - [ ] Own domain for the site: DNS records, Settings > Pages > Custom domain, HTTPS; build site/ with
-      VITE_BASE=/ and update the og:image and canonical links in site/index.html and docs-src/manual.src.html.
+      VITE_BASE=/ and update the og:image and canonical links in site/index.html and site/manual/index.html.
+- [ ] Test the flow-mcp route end to end on a real Windows PC (its README says Windows hasn't been run on a
+      real PC yet) and write down what the owner sees.
 - [ ] First real run: HQ setup + EP001-EP005 on Page #1, then a retro.
 - [ ] HyperFrames starter templates per format: caption styles, title cards, covers.
 - [ ] tools/check-tools.ps1 and check-tools.sh shipped in the kit and tested.
@@ -23,9 +25,12 @@ Ideas, not promises. Retros (prompts/retro.md) add to this list.
 ## Later
 - [ ] Scheduled monthly trend refresh.
 - [ ] Multi-page dashboard that reads the studio CSVs.
-- [ ] Translations of the manual.
+- [ ] Translations of the guide.
 
 ## Done
+- [x] v1.4.0 (2026-11-06): video model choice (Omni 1.1 Flash default, Veo 3.1 Lite, Fast or Quality),
+      optional Flow automation with flow-mcp (owner installs it), KuyaLoy signature on by default and said at
+      setup, the guide rebuilt in the Project Factory brand, five sample clips with obvious motion.
 - [x] v1.3.0 (2026-11-06): Project Factory landing page in site/ (React, Vite, Tailwind, GSAP, Motion),
       GitHub Actions deploy, prompt library from the real files, Flow-made sample pictures and clips,
       1200x630 link preview image, the v1.2 page kept as the guide at /manual/.

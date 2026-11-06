@@ -30,7 +30,7 @@ Never ask a setup question whose answer is already in these files.
 | prompts/trend-refresh.md | trend-radar (full) > update research > handoff |
 | prompts/continue.md | read the summary, state the next action, do it |
 | prompts/update-kit.md | compare .kit-version with page-factory/VERSION > copy new skills and tools > merge template changes with approval > migrations > handoff |
-| prompts/retro.md | review folders > propose kit changes > after approval edit the kit, bump VERSION, CHANGELOG, manifest, manual > handoff |
+| prompts/retro.md | review folders > propose kit changes > after approval edit the kit, bump VERSION, CHANGELOG, manifest, site > handoff |
 
 ## Episode claims (no conflicts between chats)
 - Next EP number = highest EP in pages/<slug>/episodes.csv + 1.

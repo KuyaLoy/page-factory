@@ -42,10 +42,11 @@ one only for its job (example: Higgsfield replaces Chatterbox for voice).
    Chatterbox / free preset voice with Kokoro / a paid voice you already have.
 6. Audience: global English (Recommended) or a specific country or language. Posting times: evenings
    in the audience's timezone, shown in the user's timezone too.
-7. Easter egg (optional, no recommended option, it's the user's choice): "Hide a tiny 'KuyaLoy'
-   signature in one background spot per video (a poster, a sign, a T-shirt print, a TV in the room) as
-   a thank-you to the kit's creator?" Yes / No. Also offer "my own signature instead" (their name or
-   handle). Save the answer in page.md. Never turn it on without a clear yes.
+7. KuyaLoy signature (on by default; always tell the user, never hide it from them): say in one line
+   "Every video hides a tiny 'KuyaLoy' signature in one background spot (a poster, a sign, a T-shirt
+   print, a TV in the room), like a painter's signature: the kit's thank-you, since it's free." Then
+   ask: Keep it (Recommended) / Use my own name or handle instead / Turn it off. Save the answer in
+   page.md (Easter egg line). If the user says off, it stays off.
 
 ### Round D: platforms (save to page.md)
 For EACH of Facebook Page, Instagram, Threads, YouTube (Shorts), TikTok:
@@ -57,10 +58,22 @@ Then follow the platform-setup skill.
 2. Visuals: Google Flow free credits, 50 a day (Recommended) / my paid Flow plan / local ComfyUI
    (only with a strong NVIDIA GPU) / a paid tool I already have.
 3. Editor: HyperFrames + ffmpeg (Recommended, free) / CapCut (if owned) / Kdenlive or Shotcut.
+4. Video model for motion shots (when visuals come from Flow): Omni 1.1 Flash (Recommended: Flow's
+   default, 7 / 10 / 12 / 15 credits for 4 / 6 / 8 / 10 s, takes character references) / Veo 3.1 Lite
+   (10) / Veo 3.1 Fast (20) / Veo 3.1 Quality (100, hero shots only). Prices change: read Flow's own
+   quote. Save to studio.md (Motion clips). The user can switch any single shot later.
+5. Flow automation (optional, only when visuals come from Flow): No, I paste the prompts into Flow
+   myself (Recommended) / Yes, I'll install flow-mcp. Explain first: flow-mcp
+   (github.com/GTAI-1/flow-mcp) is a third-party tool that drives Flow in its own Chrome window so the
+   chat can queue shots and download results; the user installs it from its README and signs in to
+   Google by hand; it skips any generation above its credit cap (max_credits, default 25); its README
+   says it can break when Flow changes and that automated use may be against Google's terms. Never
+   install it for the user. Save to studio.md (Flow automation: off, or on: flow-mcp).
 
 ## Defaults when the user skips a question
-Reply in English | US Eastern evening posting | 4-5 videos a week | Flow free credits | HyperFrames |
-Kokoro preset voice | all five platforms set to "Skip for now" until the user asks.
+Reply in English | US Eastern evening posting | 4-5 videos a week | Flow free credits | Omni 1.1 Flash
+for motion | Flow automation off | HyperFrames | Kokoro preset voice | KuyaLoy signature on | all five
+platforms set to "Skip for now" until the user asks.
 
 ## Where answers go
 - studio.md: Round A, Round B, tool choices, environment, setup status.

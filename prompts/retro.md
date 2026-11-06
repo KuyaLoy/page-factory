@@ -19,6 +19,6 @@ RETRO. Folders to review: <paths>.
 4. After I approve: edit the kit files following kit/EXTENDING.md, bump VERSION (patch = fixes,
    minor = new skill/prompt/module, major = needs migration), add a CHANGELOG.md entry with a
    "Migration" note when studios need steps, update kit/manifest.json and ROADMAP.md, then run
-   python tools/build_manual.py.
+   python tools/build_manifest.py.
 5. Update page-factory/handoff.md and ai-handoff-summary.md. Give me the git commands to commit and push.
 ```

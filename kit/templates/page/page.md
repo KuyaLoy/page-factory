@@ -12,7 +12,7 @@ Slug: <page-slug> | Created: <YYYY-MM-DD> | Status: setup / active / paused
 - Character or style: <name>, see brand/mascot-bible.md
 - Narrator voice: <own voice / Chatterbox clone / Kokoro preset / paid voice>
 - Signature open: <line> | Signature close: <line>
-- Easter egg: <off / on: "KuyaLoy" / on: own signature "<text>"> (one hidden background spot per video)
+- Easter egg: <on: "KuyaLoy" (default) / on: own signature "<text>" / off> (one hidden background spot per video, told to the owner at setup)
 
 ## Series (content pillars)
 | Series | What it covers | Example title |

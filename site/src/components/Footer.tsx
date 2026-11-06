@@ -1,4 +1,4 @@
-import { changelogUrl, licenseUrl, manualUrl, repoUrl, version, zipUrl } from '../content/site'
+import { authorUrl, changelogUrl, licenseUrl, manualUrl, repoUrl, version, zipUrl } from '../content/site'
 import { Logo } from './Logo'
 
 export function Footer() {
@@ -35,7 +35,7 @@ export function Footer() {
             </li>
             <li>
               <a className="hover:text-lime" href={manualUrl}>
-                Full guide (v1.2 manual)
+                Full guide
               </a>
             </li>
             <li>
@@ -48,12 +48,24 @@ export function Footer() {
         <div>
           <h2 className="eyebrow text-mute">Credits</h2>
           <ul className="mt-3 flex flex-col gap-2 leading-relaxed text-mute">
-            <li>Sample pictures and clips: made with Google Flow for this site. Illustrative, not output of the kit.</li>
+            <li>
+              Sample pictures and clips: made with Google Flow for this site (Nano Banana Pro pictures, Veo 3.1 clips).
+              Illustrative, not output of the kit.
+            </li>
             <li>Type: Geist and Geist Mono (SIL Open Font License 1.1). Icons: Lucide (ISC).</li>
             <li>Built with React, Vite and Tailwind CSS (MIT). Motion: GSAP (Standard no-charge license) and Motion (MIT).</li>
             <li>Not affiliated with Anthropic, Google, Meta, YouTube or TikTok.</li>
           </ul>
         </div>
+      </div>
+      <div className="border-t border-white/[0.07]">
+        <p className="mx-auto max-w-[1240px] px-4 py-5 text-sm text-mute sm:px-6">
+          Made by{' '}
+          <a className="font-medium text-ivory underline decoration-line underline-offset-4 hover:decoration-lime" href={authorUrl}>
+            KuyaLoy
+          </a>{' '}
+          with Claude. MIT License.
+        </p>
       </div>
     </footer>
   )

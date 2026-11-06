@@ -1,24 +1,23 @@
 import { ArrowLeft, ArrowRight } from 'lucide-react'
 import { useCallback, useEffect, useRef, useState } from 'react'
-import type { PosterKey, VideoKey } from '../content/media'
+import { clipLabel, type VideoKey } from '../content/media'
 import { REDUCED_MOTION_QUERY, useMediaQuery } from '../lib/useMediaQuery'
 import { LoopVideo } from './LoopVideo'
-import { Picture } from './Picture'
 
 interface Sample {
-  poster: PosterKey
-  video?: VideoKey
-  style: string
+  clip: VideoKey
+  /** The camera move, the kind of motion shot the kit asks Flow for. */
+  move: string
   caption: [string, string]
 }
 
-/** Sample frames with the kind of word captions the kit puts on videos. Illustrative only. */
+/** Sample clips with the kind of word captions the kit puts on videos. Illustrative only. */
 const samples: Sample[] = [
-  { poster: 'lake', style: 'Calm nature', caption: ["That blue isn't", 'the sky.'] },
-  { poster: 'forest', style: 'Light', caption: ['Why sunbeams', 'show up in mist.'] },
-  { poster: 'waterfall', video: 'waterfall', style: 'Motion', caption: ['Where the mist', 'comes from.'] },
-  { poster: 'architecture', style: 'Texture', caption: ['Wood grain,', 'cast in concrete.'] },
-  { poster: 'macro', style: 'Detail', caption: ['Dew forms on', 'clear, calm nights.'] },
+  { clip: 'lake', move: 'Drone glide', caption: ["That blue isn't", 'the sky.'] },
+  { clip: 'forest', move: 'Walk-through', caption: ['Why sunbeams', 'show up in mist.'] },
+  { clip: 'waterfall', move: 'Push-in', caption: ['Where the mist', 'comes from.'] },
+  { clip: 'architecture', move: 'Time-lapse', caption: ['Why shadows', 'stretch at sunset.'] },
+  { clip: 'macro', move: 'Slow motion', caption: ['Dew forms on', 'clear, calm nights.'] },
 ]
 
 export function Gallery() {
@@ -59,11 +58,12 @@ export function Gallery() {
           <div className="max-w-2xl">
             <p className="eyebrow text-mute">Samples, for illustration</p>
             <h2 id="samples-title" className="display mt-4 text-[clamp(2.4rem,5vw,4.25rem)]">
-              What a 9:16 frame can look like.
+              What a 9:16 clip can look like.
             </h2>
             <p className="mt-5 leading-relaxed text-mute">
-              Vertical frames with word captions, the format the kit makes. These pictures and the clip were made with
-              Google Flow for this site. They are not output of the kit, and your page gets its own look.
+              Vertical clips with word captions, the format the kit makes, each with a different camera move. These
+              clips were made with Google Flow (Veo 3.1) for this site. They are not output of the kit, and your page
+              gets its own look.
             </p>
           </div>
           <div className="flex gap-2">
@@ -93,26 +93,23 @@ export function Gallery() {
       <ul
         id="sample-list"
         ref={list}
-        aria-label="Sample frames"
+        aria-label="Sample clips"
         tabIndex={0}
         className="bleed-x scrollbar-none mt-10 flex snap-x snap-mandatory gap-4 overflow-x-auto pb-20 lg:pb-28"
       >
         {samples.map((sample, i) => (
-          <li key={sample.poster} className="w-[72vw] max-w-[19rem] shrink-0 snap-start sm:w-[17rem]">
+          <li key={sample.clip} className="w-[72vw] max-w-[19rem] shrink-0 snap-start sm:w-[17rem]">
             <figure>
               <div className="card-frame relative aspect-[9/16]">
-                {sample.video ? (
-                  <LoopVideo
-                    video={sample.video}
-                    poster={sample.poster}
-                    label="Sample clip: a waterfall pouring into a turquoise pool."
-                    sizes="(min-width: 640px) 272px, 72vw"
-                    className="h-full w-full"
-                    buttonClassName="right-3 top-3"
-                  />
-                ) : (
-                  <Picture name={sample.poster} sizes="(min-width: 640px) 272px, 72vw" />
-                )}
+                <LoopVideo
+                  video={sample.clip}
+                  poster={sample.clip}
+                  label={clipLabel[sample.clip]}
+                  sizes="(min-width: 640px) 272px, 72vw"
+                  autoPlay
+                  className="h-full w-full"
+                  buttonClassName="right-3 top-3"
+                />
                 <p
                   aria-hidden="true"
                   className="pointer-events-none absolute inset-x-3 top-[62%] text-center text-[1.15rem] font-bold leading-[1.35] tracking-tight"
@@ -123,10 +120,9 @@ export function Gallery() {
                 </p>
               </div>
               <figcaption className="mt-3 flex items-baseline justify-between gap-3 text-sm">
-                <span className="font-medium">{sample.style}</span>
+                <span className="font-medium">{sample.move}</span>
                 <span className="font-mono text-xs text-mute">
                   {i + 1} / {samples.length}
-                  {sample.video ? ' · clip' : ''}
                 </span>
               </figcaption>
             </figure>

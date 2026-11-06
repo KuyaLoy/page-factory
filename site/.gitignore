@@ -23,6 +23,3 @@ dist-ssr
 *.sln
 *.sw?
 
-# Copied from ../docs by scripts/sync-content.mjs (npm run sync, runs before dev and build)
-public/manual/
-public/assets/

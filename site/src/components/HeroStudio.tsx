@@ -1,5 +1,6 @@
 import { motion, useMotionValue, useSpring, useTransform, type MotionValue } from 'motion/react'
 import { useCallback, useRef, type PointerEvent } from 'react'
+import { clipLabel } from '../content/media'
 import { FINE_POINTER_QUERY, useMediaQuery } from '../lib/useMediaQuery'
 import { LoopVideo } from './LoopVideo'
 import { Picture } from './Picture'
@@ -76,7 +77,7 @@ export function HeroStudio() {
             <LoopVideo
               video="lake"
               poster="lake"
-              label="Sample clip: mist drifting over a turquoise glacial lake below snowy peaks."
+              label={clipLabel.lake}
               sizes="(min-width: 1024px) 300px, 52vw"
               autoPlay
               priority

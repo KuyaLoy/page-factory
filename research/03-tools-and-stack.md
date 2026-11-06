@@ -28,10 +28,14 @@ their job. New paid tools only after a page earns money.
 - Nano Banana 2 Lite (images) "is the default model available at no charge."
 | Model | Clip | Credits (non-Ultra) |
 |---|---|---|
-| Gemini Omni Flash 720p | 4 / 6 / 8 / 10 s | 7 / 10 / 12 / 15 |
+| Omni 1.1 Flash (Flow's default video model; Help calls it Gemini Omni Flash), 720p | 4 / 6 / 8 / 10 s | 7 / 10 / 12 / 15 |
 | Veo 3.1 Lite | 4-8 s | 10 |
 | Veo 3.1 Fast | 4 / 6 / 8 s | 20 |
 | Veo 3.1 Quality | 8 s | 100 |
+- Seen in the Flow app on 2026-11-06 (9:16, 720p, 8 s, 1 output): Omni 1.1 Flash 12, Veo 3.1 Lite 10,
+  Veo 3.1 Fast 20, Veo 3.1 Quality 100 credits; Nano Banana Pro images 0 credits on a Google AI Pro plan.
+  Downloads: images 1K or 2K upscaled (4K needs a higher plan), videos 720p or 1080p upscaled. The
+  kit's default video model is Omni 1.1 Flash; setup lets the owner pick another. [High: Flow app]
 - Character references ("ingredients") work on Veo 3.1 Lite, Fast (8 s) and Omni. Flow is for users
   18+, available in many countries (check yours), and won't generate prominent people.
 - Watermarks: not stated on the help pages read. Check your first exports.
@@ -41,6 +45,19 @@ their job. New paid tools only after a page earns money.
   credit when the shot can use it. [inference from the price table]
 - Google's own Flow pages disagree on which models can Extend, which lengths Quality supports and
   whether some features need a paid plan. Check in the app. [High: Help 16352836 vs 16526234, 2026-11-05]
+
+### Flow automation (optional): flow-mcp (github.com/GTAI-1/flow-mcp)
+- A third-party program that runs on your own computer, opens its own Chrome window signed in as you
+  (you sign in by hand; it never types your password) and clicks Flow's real buttons, so a chat can
+  queue generations and download results. Works with Claude Code, Codex and other MCP apps.
+- Needs Node.js 22+, Chrome, a Google account and a display that stays awake. Developed on macOS;
+  Windows is supported but its README says it hadn't been run on a real PC yet.
+- Before each generation it reads Flow's credit quote and skips the scene if it costs more than
+  max_credits (default 25). One generation at a time, with 25-70 s pauses. Re-downloads are free.
+- Risk, in its own words: it "can break whenever Google changes that interface, and automated use may be
+  against Google's terms of service. Use it on your own account, at your own risk."
+- Kit rule: off by default. The owner installs it from its README; the kit never installs it. When on,
+  shot-planner shows the shots and total credits first and waits for an OK. [README read 2026-11-06]
 
 ### Credit plan per video
 - All-motion (12 Veo Fast shots x 2 tries) = about 480 credits. Too much for any plan.

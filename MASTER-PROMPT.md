@@ -1,4 +1,4 @@
-# MASTER PROMPT: Page Factory HQ setup (v1.3.0)
+# MASTER PROMPT: Page Factory HQ setup (v1.4.0)
 
 Make an empty folder for your studio, open it in Claude Code (or Cowork), and paste everything inside
 the block below into the FIRST chat. It downloads the kit, asks you everything once and sets up
@@ -39,7 +39,7 @@ Do the work yourself. Guide me step by step like a patient coach. Don't skip ste
 == 2. GET THE KIT (download it for me) ==
 - The studio root is the folder this chat is open in. Confirm the path with me. It can be empty.
 - Look for the kit: a folder named "page-factory" or "page-factory-main" with MASTER-PROMPT.md,
-  prompts/, kit/, research/ and docs/ inside. Check the studio root, then its parent.
+  prompts/, kit/ and research/ inside. Check the studio root, then its parent.
 - If it's not there, download it into the studio root (tell me first):
     If git is installed:  git clone https://github.com/KuyaLoy/page-factory.git page-factory
     Windows without git:  Invoke-WebRequest https://github.com/KuyaLoy/page-factory/archive/refs/heads/main.zip -OutFile page-factory.zip
@@ -72,12 +72,15 @@ Follow the rounds in kit/skills/hq-setup/SKILL.md (multiple choice, recommended 
   first"), name (5 options, search YouTube, Facebook and TikTok for clashes), character or visual
   style, series (4-5 pillars), narrator voice (my own recorded voice / free clone of my voice with
   Chatterbox / free preset voice with Kokoro / a paid voice I already have), audience and posting times,
-  and the optional easter egg (a tiny hidden signature in each video; only if I say yes).
+  and the KuyaLoy signature (a tiny hidden thank-you in one background spot per video; it's on unless
+  I turn it off, and I can use my own name instead).
 - Round D, platforms: for EACH of Facebook Page, Instagram, Threads, YouTube (Shorts) and TikTok:
   "I already have it (paste the link)" / "Help me create it" / "Skip for now".
-- Round E, pace and visuals: videos per week (Recommended 4-5) and where visuals come from
+- Round E, pace and visuals: videos per week (Recommended 4-5), where visuals come from
   (Recommended: Google Flow free credits, 50 a day; or my paid Flow plan; or local ComfyUI if I have
-  a strong NVIDIA GPU).
+  a strong NVIDIA GPU), the video model for motion shots (Recommended: Omni 1.1 Flash, Flow's default;
+  or Veo 3.1 Lite, Fast or Quality, each shown with its credit cost), and optional Flow automation
+  with flow-mcp (a third-party tool I install myself; off unless I say yes).
 Write every answer into studio.md and pages/<slug>/page.md as you go.
 
 == 4. SOCIAL ACCOUNTS (platform-setup skill) ==

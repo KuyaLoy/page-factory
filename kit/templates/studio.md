@@ -16,7 +16,8 @@ Change it only in the HQ chat, a weekly review, or when the user asks.
 |---|---|---|---|
 | Topic research | web + trend-radar skill | free | |
 | Stills | <Google Flow, Nano Banana / ComfyUI / paid tool> | free | |
-| Motion clips | <Google Flow free credits, 50 a day / paid Flow plan / ComfyUI> | free | free tier: video may be unavailable 2-5 PM UTC |
+| Motion clips | <Google Flow free credits, 50 a day / paid Flow plan / ComfyUI> | free | model: <Omni 1.1 Flash (default) / Veo 3.1 Lite / Fast / Quality>; free tier: video may be unavailable 2-5 PM UTC |
+| Flow automation | <off (default) / on: flow-mcp> | free, third-party | installed by the owner from its README; its README warns automated use may be against Google's terms |
 | Voice | <own recorded voice / Chatterbox clone / Kokoro preset / paid voice> | | |
 | Captions | faster-whisper | free | |
 | Editor | <HyperFrames + ffmpeg / Kdenlive / Shotcut / CapCut> | | |

@@ -1,10 +1,8 @@
 # Page Factory kit repo
 .env
 *.mp4
-!docs/assets/*.mp4
-!docs-src/assets/*.mp4
 !site/public/media/*.mp4
-!site/assets-src/originals/*.mp4
+# Video originals (site/assets-src/originals/*.mp4) stay local: they are large. See site/README.md.
 *.mov
 *.wav
 *.mp3

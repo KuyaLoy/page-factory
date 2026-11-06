@@ -51,13 +51,16 @@ export function LoopVideo({
     if (!autoPlay || reduced) return
 
     let ready = false
+    let settle: number | undefined
     const attempt = () => {
       if (ready && onScreen.current && !userPaused.current) el.play().catch(() => undefined)
     }
     const observer = new IntersectionObserver(
       ([entry]) => {
         onScreen.current = entry.isIntersecting
-        if (entry.isIntersecting) attempt()
+        window.clearTimeout(settle)
+        // Wait a moment, so scrolling quickly past a clip doesn't start downloading it.
+        if (entry.isIntersecting) settle = window.setTimeout(attempt, 250)
         else if (!el.paused) el.pause()
       },
       { threshold: 0.2 },
@@ -79,6 +82,7 @@ export function LoopVideo({
       observer.disconnect()
       window.removeEventListener('load', begin)
       window.clearTimeout(timer)
+      window.clearTimeout(settle)
     }
   }, [autoPlay, reduced])
 

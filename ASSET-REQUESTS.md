@@ -1,8 +1,12 @@
 # Asset requests: Project Factory site (Kinetic Studio)
 
 Status: done 2026-11-06. Made in Google Flow (Nano Banana Pro, 9:16, 2 takes each, 0 credits) in Loy's
-signed-in Chrome, picked by eye, downloaded as "2K upscaled" JPGs (1536x2752). Originals are in
-`site/assets-src/originals/`; web copies come from `npm run media` in `site/`. Provenance: `ASSET-LICENSES.md`.
+signed-in Chrome, picked by eye, downloaded as "2K upscaled" JPGs (1536x2752). Web copies come from
+`npm run media` in `site/`. Provenance: `ASSET-LICENSES.md`.
+
+Since v1.4.0 these five pictures are the start frames of the clips V3 to V7 (`VIDEO-REQUESTS.md`), and the
+posters on the site are each clip's first loop frame (1080x1920), saved by `npm run media` as
+`site/assets-src/originals/pf-poster-<name>.jpg`. The 2K stills are in the git history (v1.3.0).
 
 Rules every asset followed
 - Artwork only. No text, logos, UI, buttons, play icons, waveforms, timeline bars or watermarks. The site draws
@@ -67,9 +71,9 @@ clean. No text, no letters, no logos, no watermarks, no insects.
 
 | ID | File | Use and placement | Decorative? | Alt text |
 |---|---|---|---|---|
-| A1 | pf-poster-lake.jpg | Hero main card (under the lake clip), final 9:16 preview in the workflow scene, timeline thumbnail, gallery card 1, social image. Start and end frame of video V1. | No | A calm turquoise glacial lake at first light, snowy peaks and pine forest reflected in the water. |
+| A1 | pf-poster-lake.jpg | Hero main card (under the lake clip), final 9:16 preview in the workflow scene, timeline thumbnail, gallery card 1, social image. Start frame of clip V3 (V1 until v1.4.0). | No | A calm turquoise glacial lake at first light, snowy peaks and pine forest reflected in the water. |
 | A2 | pf-poster-forest.jpg | Hero tilted card (back), timeline thumbnail, gallery card 2. | Yes in the hero, no in the gallery | Morning sun rays streaming through tall pines beside a turquoise lake. |
-| A3 | pf-poster-waterfall.jpg | Hero tilted card (middle), timeline thumbnail, gallery card 3 (under clip V2). Start and end frame of V2. | Same as A2 | A tall waterfall pouring over mossy rock into a turquoise pool under a snowy peak. |
+| A3 | pf-poster-waterfall.jpg | Hero tilted card (middle), timeline thumbnail, gallery card 3 (under clip V5). Start frame of V5 (V2 until v1.4.0). | Same as A2 | A tall waterfall pouring over mossy rock into a turquoise pool under a snowy peak. |
 | A4 | pf-poster-architecture.jpg | Gallery card 4. | No | A raw concrete stairway and curved wall in hard sunlight with one long diagonal shadow. |
 | A5 | pf-poster-macro.jpg | Gallery card 5, timeline thumbnail. | No | Dew drops on a green fern frond catching tiny points of golden morning light. |
 
@@ -77,7 +81,8 @@ Crop-safe notes (still true for replacements)
 - Timeline thumbnails crop each 9:16 poster to a wide strip around the middle (about 40% to 60% of the height).
 - Hero cards are tilted and overlapped; keep the subject in the center 70%.
 - Captions sit between 55% and 80% of the height.
-- The web copies are cropped to exactly 9:16 (the 2K originals are 1536x2752, a little taller).
+- The web copies are exactly 9:16. The 2K stills were 1536x2752, a little taller; the clip frames used since
+  v1.4.0 are 1080x1920.
 
 ## If you ever regenerate the set with ChatGPT or Codex instead
 Paste this, then put the files in `site/assets-src/originals/` with the same names and run `npm run media`.

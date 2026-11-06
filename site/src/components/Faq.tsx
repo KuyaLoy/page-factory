@@ -86,12 +86,35 @@ const items: Item[] = [
     ),
   },
   {
-    id: 'faq-egg',
-    question: "What's the easter egg?",
+    id: 'faq-model',
+    question: 'Which video model does it use in Flow?',
     answer: (
       <>
-        An optional thank-you. Setup asks whether to hide a tiny &ldquo;KuyaLoy&rdquo; signature in one background spot
-        per video. You can hide your own name instead, or say no. It&apos;s off unless you say yes.
+        Omni 1.1 Flash, Flow&apos;s default video model, at 7 to 15 credits a clip. Setup lets you pick Veo 3.1 Lite,
+        Fast or Quality instead and shows what each one costs. Most shots are free stills animated in the edit, so only
+        the key moments use video credits.
+      </>
+    ),
+  },
+  {
+    id: 'faq-flow',
+    question: 'Can the chat make the Flow clips by itself?',
+    answer: (
+      <>
+        Only if you install flow-mcp yourself, a third-party tool that drives Flow in its own Chrome window after you
+        sign in by hand. By default you paste the prompts into Flow. Its README warns that automated use may be against
+        Google&apos;s terms, so it&apos;s at your own risk, and the kit never installs it for you.
+      </>
+    ),
+  },
+  {
+    id: 'faq-egg',
+    question: "What's the KuyaLoy signature?",
+    answer: (
+      <>
+        A tiny &ldquo;KuyaLoy&rdquo; signature hidden in one background spot per video, like a painter&apos;s
+        signature: the kit&apos;s thank-you, since it&apos;s free. It&apos;s on by default and setup tells you about
+        it. You can keep it, use your own name instead, or turn it off.
       </>
     ),
   },
@@ -163,7 +186,7 @@ export function Faq() {
             Before you paste.
           </h2>
           <p className="mt-5 max-w-sm leading-relaxed text-stone">
-            Short answers here. The full guide covers every step with pictures:{' '}
+            Short answers here. The full guide covers every step, with every prompt:{' '}
             <a href={manualUrl} className="font-medium text-ink underline underline-offset-4">
               open the guide
             </a>
