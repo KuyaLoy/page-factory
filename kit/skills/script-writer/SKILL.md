@@ -31,6 +31,10 @@ Example at 55 s: hook 0-2, setup 2-10, escalation 10-36, payoff 36-48, button 48
 - Caption chunks: 2-4 words each, in the script table.
 - One soft call to action at most, at the end ("More shift reports tomorrow").
 - Never reuse a competitor's phrasing, structure beat-for-beat, or title.
+- Write every line yourself from the fact-check notes. Never copy or read out source text.
+- Give each episode its own shape: a different twist, ending or winner. Never the same situation with
+  the same outcome as recent episodes (YouTube treats that as repetitive).
+- The character tells the story. It never gives advice on health, law, money or politics.
 
 ## Title options (3)
 Use a pattern from research/02-trend-radar.md (Title formulas). 3-7 words, concrete nouns,

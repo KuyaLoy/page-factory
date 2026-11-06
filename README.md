@@ -4,7 +4,7 @@ A free kit that sets up a faceless video page for Facebook, Instagram, Threads, 
 TikTok, using Claude Code or Cowork. One master prompt sets everything up. After that, every chat makes
 one finished video: topic, sources, script, visuals, voice, captions, title, cover and posting text.
 
-**Manual and tutorial:** https://kuyaloy.github.io/page-factory/
+**Site, manual and tutorial:** https://kuyaloy.github.io/page-factory/
 Version: see `VERSION`. Facts in `research/` carry the date they were checked.
 
 ## Start in 3 steps
@@ -45,17 +45,20 @@ New paid tools are suggested only after a page earns. You need a Claude plan to 
 | `kit/templates/` | CLAUDE.md rules, studio.md, page and episode files, CSV trackers |
 | `kit/tools/` | Helper scripts (captions.py) |
 | `research/` | Monetization and policy, trend radar and page ideas, tools and costs |
-| `docs/` | The manual (GitHub Pages) |
-| `docs-src/`, `tools/build_manual.py` | Manual source and build script |
+| `docs/` | The site and manual (GitHub Pages) |
+| `docs-src/`, `tools/build_manual.py` | Site source, pictures (`docs-src/assets/`, credits inside) and build script |
 | `kit/manifest.json`, `kit/EXTENDING.md` | Kit contents and how to extend it |
 | `VERSION`, `CHANGELOG.md`, `ROADMAP.md` | Version, changes with migration notes, what's next |
 | `LICENSE` | MIT |
 
 ## For maintainers
-- Rebuild the manual and manifest after any change: `python tools/build_manual.py`
+- Rebuild the site and manifest after any change: `python tools/build_manual.py` (it also copies
+  `docs-src/assets/` to `docs/assets/`).
 - Release: bump `VERSION`, add a `CHANGELOG.md` entry, rebuild, then
   `git add -A`, `git commit -m "vX.Y.Z: ..."`, `git push`.
 - GitHub Pages: Settings > Pages > Deploy from a branch > `main`, `/docs`.
+- Own domain later: put the domain in `docs/CNAME` (the build keeps it), add the DNS records GitHub
+  shows, then Settings > Pages > Custom domain and Enforce HTTPS.
 
 ## Easter egg (optional)
 During setup you're asked whether to hide a tiny "KuyaLoy" signature in one background spot per
@@ -68,6 +71,8 @@ MIT (see `LICENSE`). Use it, change it, share it, sell what you make with it. Ke
 in copies of the kit.
 
 ## Tool licenses
-HyperFrames Apache-2.0, FFmpeg LGPL/GPL, faster-whisper MIT, Chatterbox MIT, Kokoro Apache-2.0,
+Site: anime.js MIT, rough.js MIT, fonts Permanent Marker (Apache-2.0) and Kalam (SIL Open Font License), pictures
+public domain (see `docs-src/assets/CREDITS.md`).
+Video tools: HyperFrames Apache-2.0, FFmpeg LGPL/GPL, faster-whisper MIT, Chatterbox MIT, Kokoro Apache-2.0,
 OpenMontage AGPL-3.0, Postiz AGPL-3.0, Remotion free for teams of 3 or fewer. Check each before
 commercial use.

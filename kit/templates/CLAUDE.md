@@ -39,9 +39,13 @@ Rules for every chat in this studio. The HQ setup chat fills in the <placeholder
   thumbnails or titles. Check topics/done-topics.csv (it holds competitor titles) before picking a topic.
 - Everything we publish is made by us: our script, our character, our voice, our edit.
   Meta counts content "produced directly by a creator or owner of a Profile or Page" as original.
+- Scripts are always written in our own words from fact-checked notes. Never read text from websites,
+  news or books aloud: YouTube won't monetize readings of material we didn't write.
 - No slideshow feel. YouTube doesn't monetize "image slideshows, templated storylines ... with minimal
   or no narrative" or AI content "giving the impression of mass production". Every still moves and
-  every video tells a story. Vary story structure across series.
+  every video tells a story. Vary story structure across series. Each episode needs its own storyline
+  and outcome: YouTube won't monetize characters "put in the same situation over and over again with
+  the same outcome".
 - Export clean: no visible third-party watermarks or end screens.
 - Never upload the same video twice to one platform. Sharing our own video across our own accounts is fine.
 - Easter egg: only when page.md says it's on (one tiny background spot per video, see shot-planner).
@@ -51,6 +55,8 @@ Rules for every chat in this studio. The HQ setup chat fills in the <placeholder
 - Every factual claim needs 2 independent reliable sources in the episode brief. Disputed: say so on
   screen. Myth: drop it. Never invent numbers, dates or quotes.
 - No medical, legal or financial advice. No AI "experts". No real people made to say or do things.
+  The mascot tells stories and never advises on health, law, money or politics: YouTube won't monetize
+  a channel whose AI persona does.
 
 ## AI disclosure (YouTube Help 14328491, checked 2026-11-05)
 - YouTube: disclose realistic AI content only. Animation and "cloning one's own voice to create voice
@@ -78,7 +84,7 @@ Rules for every chat in this studio. The HQ setup chat fills in the <placeholder
 ## Video spec
 - 1080x1920, 30 fps, H.264 high, yuv420p, AAC 48 kHz, voice about -14 LUFS, +faststart.
 - Length 30-90 s, usually 45-60 s. The story sets the length; never pad. Facebook Reels earn only
-  from 10 s. YouTube Shorts over 1 minute with any copyright claim can't earn, so longer videos use
+  from 10 s, and views under 5 s don't count. YouTube Shorts over 1 minute with any copyright claim can't earn, so longer videos use
   only our own or cleared audio and visuals.
 - Hook in the first 2 seconds. Captions in the middle band, away from the bottom bar and right-side buttons.
 - No licensed label music in Shorts. Facebook: max 5 hashtags.

@@ -76,7 +76,8 @@ Each idea is a page of its own. They borrow what works (format, pacing, title pa
 
 ### E. Stickman long-form sister channel (YouTube)
 - "Every ___ Explained" style stickman videos of 10-15 minutes, cut into Shorts. Uses the fastest-growing
-  format for long-form ad revenue and the 4,000 watch-hour path. Higher script effort. Good as Page #2.
+  format for long-form ad revenue and the watch-hour path (4,000 hours today, 8,000 for new channels from
+  1 Feb 2027). Higher script effort. Good as Page #2.
 
 ## 5. Title formulas (patterns, not copies)
 1. Why [Normal Thing] [Has Unexpected Detail] -> "Why Coins Have Tiny Ridges"

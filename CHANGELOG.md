@@ -3,6 +3,54 @@
 All notable changes to the Page Factory kit. Versions follow SemVer (see kit/EXTENDING.md).
 Studios upgrade with prompts/update-kit.md, which runs the Migration steps of every skipped version.
 
+## 1.2.1 (2026-11-05)
+Research merge. A second research pass re-checked 25 claims on official Meta, YouTube and Google pages
+(23 confirmed, 2 refuted). What changed in the kit:
+- YouTube: from 1 Feb 2027 new channels need 1,000 subscribers plus 20M qualified Shorts views in 90
+  days, or 8,000 watch hours in 365 days, for ads. YPP channels then need 10M qualified Shorts views
+  per 90 days (counted to the 15th) to earn from Shorts that month. New activity rule. The 500-subscriber
+  fan-funding tier is unchanged and open in the UAE and the Philippines. Updated in research/01, the
+  page.md template, analytics-review, platform-setup and the site FAQ.
+- Facebook: only qualified views pay (no repeat views, none under 5 seconds); Reels under 10 seconds
+  earn nothing. Full Creator Fast Track rules, including "fewer than 6 Facebook Reels in the past 180
+  days": users who qualify should apply before posting Reels.
+- New rules in CLAUDE.md and script-writer: scripts in our own words (never read source text aloud),
+  each episode its own storyline and outcome, and the mascot never gives health, legal, money or
+  political advice (YouTube's AI personas rule).
+- Flow: credits are charged per generation, so set 1 output per request; Veo costs the same for 4 to
+  8-second clips. Added to shot-planner and research/03.
+- The 45% Shorts revenue share is marked for re-checking: the second pass could not re-confirm the pool
+  details.
+- Site: money and AI answers updated; a sample shot prompt no longer shows a real person.
+
+Migration: copy the changed skills (script-writer, shot-planner, platform-setup, analytics-review) into
+.claude/skills/. In CLAUDE.md, merge the new lines in "Originality", "Facts and safety" and "Video spec"
+from kit/templates/CLAUDE.md. In each pages/<slug>/page.md, replace the rows of the "Monetization path"
+table with the rows in kit/templates/page/page.md, keeping your Status and Checked values.
+
+## 1.2.0 (2026-11-05)
+The site becomes a real landing page: hand-drawn, moving, and still the whole tutorial.
+- New landing page in docs/, styled like a photocopied DIY zine: marker and handwriting type
+  (Permanent Marker, Kalam), pen lines drawn with rough.js, hand-cut fills, motion with anime.js.
+- Sections: first screen with the copy button; a row of studio screens you can swipe, where picking a
+  topic makes the script, Flow prompt sheet, posting pack and handoff follow it; how it works (a drawn
+  diagram: many answers into files, out as finished videos); every step with who, where and about how
+  long, with copy buttons in the rows; all prompts as a command list (type to filter, arrow keys,
+  letter shortcuts, Enter to copy, "Read it" before you copy); FAQ as index cards; a one-word COPY band;
+  footer with the research files and picture credits.
+- Pictures from early animation, all public domain and credited on the page and in
+  docs-src/assets/CREDITS.md: the Gertie the Dinosaur poster, drawings and an 8-second film loop
+  (1914), a zoetrope strip (about 1860), a spinning phenakistiscope disc (1833) and Muybridge's
+  Horse in Motion (1878).
+- Works on phones, honours "reduce motion", and every copy button has a fallback when the browser
+  blocks the clipboard.
+- tools/build_manual.py copies docs-src/assets/ to docs/assets/ and build/assets/.
+- .gitignore keeps the site's mp4 clip.
+- Kit content is unchanged: prompts, skills, templates and research are the same as 1.1.0.
+
+Migration: none for studios. Maintainers: run python tools/build_manual.py, then commit docs/
+including docs/assets/.
+
 ## 1.1.0 (2026-11-05)
 Made for sharing: free-first, spoon-fed, and the master prompt is now the HQ that sets up everything.
 - MASTER-PROMPT.md rewritten as the HQ setup. It downloads the kit from GitHub by itself, asks every

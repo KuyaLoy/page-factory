@@ -1,4 +1,4 @@
-# MASTER PROMPT: Page Factory HQ setup (v1.1.0)
+# MASTER PROMPT: Page Factory HQ setup (v1.2.1)
 
 Make an empty folder for your studio, open it in Claude Code (or Cowork), and paste everything inside
 the block below into the FIRST chat. It downloads the kit, asks you everything once and sets up

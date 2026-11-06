@@ -24,13 +24,18 @@ mode, 2-step verification, link to the other accounts. List what's missing and f
 5. YouTube Studio > Settings > Upload defaults: category, language, audience "No, it's not made for
    kids" only when the content is for a general audience.
 6. Monetization: YouTube Studio > Earn shows progress to the Partner Program. Check that the user's
-   country is on the YPP country list (support.google.com/youtube/answer/7101720).
+   country is on the YPP country list (support.google.com/youtube/answer/7101720). Tell the user the
+   ads bar for new channels rises on 1 Feb 2027 (research/01) and that the 500-subscriber fan-funding
+   tier comes first. Start the channel now, together with the Facebook Page.
 
 ## Facebook Page
 1. Facebook > Menu > Pages > Create new Page: name, category, bio.
 2. Profile picture and cover from the brand pack. Set the @username.
 3. Open the Professional Dashboard. Monetization tab: see what the Page can join, express interest in
-   Content Monetization (invite-only), note Stars (500 followers for 30 days).
+   Content Monetization (invite-only) now, not later, note Stars (500 followers for 30 days).
+   If the user lives in the US, Canada, UK or Australia and has 1,000+ followers on Instagram, TikTok
+   or YouTube, check Creator Fast Track BEFORE posting Reels: it needs fewer than 6 Facebook Reels in
+   the past 180 days (research/01).
 4. Turn on 2-factor authentication for the Facebook account.
 
 ## Instagram

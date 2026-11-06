@@ -40,8 +40,10 @@ Slug: <page-slug> | Created: <YYYY-MM-DD> | Status: setup / active / paused
 ## Monetization path (for <country of residence>)
 | Platform | Program | Requirement | Status | Checked |
 |---|---|---|---|---|
-| YouTube | Partner Program | 1,000 subs + 10M Shorts views in 90 days, or 4,000 watch hours in 12 months | | |
-| Facebook | Content Monetization | invite-only, express interest in Professional Dashboard | | |
+| YouTube | Fan funding (no ads) | 500 subs + 3 uploads in 90 days + 3M Shorts views in 90 days or 3,000 watch hours | | |
+| YouTube | Partner Program (ads) | Until 31 Jan 2027: 1,000 subs + 10M Shorts views in 90 days or 4,000 watch hours. From 1 Feb 2027: 1,000 subs + 20M Shorts views in 90 days or 8,000 watch hours, then 10M Shorts views per 90 days for Shorts pay | | |
+| Facebook | Content Monetization | invite-only, express interest in Professional Dashboard in week one; Reels 10 s+ | | |
+| Facebook | Creator Fast Track | US, CA, UK, AU residents only; 1,000+ followers elsewhere; fewer than 6 FB Reels in 180 days | | |
 | Facebook | Stars | 500 followers for 30 days | | |
 | TikTok | <program shown in TikTok Studio> | <rules from the official page> | | |
 

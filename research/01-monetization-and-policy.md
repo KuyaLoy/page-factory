@@ -1,6 +1,7 @@
 # 01: Monetization and Policy (Facebook, Instagram, Threads, YouTube, TikTok)
 
-Last checked: 2026-11-05 | Re-check monthly with prompts/trend-refresh.md
+Last checked: 2026-11-05 (second pass the same day: 25 claims re-checked on official Meta, YouTube and
+Google pages, 23 confirmed, 2 refuted) | Re-check monthly with prompts/trend-refresh.md
 Confidence: [High] official Meta / Google page read directly. [Med] 2+ secondary sources or one
 careful secondary source citing the official page. [Low] single secondary source, vendor blog or forum.
 
@@ -10,10 +11,13 @@ careful secondary source citing the official page. [Low] single secondary source
 2. Post the same video to the Facebook Page, Instagram, Threads and YouTube from day 1.
    Sharing your own content across your own accounts is allowed.
 3. YouTube is the clearest money path: public thresholds and a long country list (check yours on Help 7101720).
+   The bar for new channels rises on 1 Feb 2027 (see YouTube below), so plan for it.
 4. Facebook Content Monetization is still invite-only and Meta publishes no country list. Build
-   reach on Facebook, express interest, use Stars from 500 followers.
+   reach on Facebook, express interest in week one, use Stars from 500 followers.
 5. Shorts pay little per view. Plan long-form compilations (8+ min) for YouTube and Facebook
    once a series has 8-12 episodes.
+6. The mascot tells stories and never gives health, legal, money or political advice, and every script
+   is in our own words. YouTube won't monetize AI personas that advise, or readings of other people's text.
 
 ## Facebook
 
@@ -29,16 +33,25 @@ careful secondary source citing the official page. [Low] single secondary source
 - No public follower or view threshold for Content Monetization. No public country list. [Med]
 - Meta paid creators "nearly $3 billion in 2025", up 35%. New metrics: Qualified Views, Earnings Rate
   (approximate earnings per 1,000 qualified views), Non-Qualified Views. [High: about.fb.com 2026-03-18]
-- Reels must be at least 10 seconds to earn. [Med: lilachbullock]
+- Pay counts qualified views only: repeat views, views under 5 seconds and views on content that
+  breaks Meta's policies don't count. [High: creators.facebook.com/blog/new-tips-to-help-you-earn-on-
+  facebook-content-monetization, 2026-03-30]
+- Reels shorter than 10 seconds earn nothing. [Med: the Professional Dashboard's non-qualified view
+  reasons, quoted by guides citing Meta Help 1049081556813520; Meta Help pages block automated reading]
 - Unverified: ARY News (2026-06-21) reported a test where 300,000 views in 28 days could qualify a
   page. No Meta source. [Low]
 
-### Creator Fast Track (not for us right now)
-- Guaranteed $100-$450/month (20K-99K followers), $1,000 (100K+), $3,000 (1M+) for 3 months, plus
-  instant Content Monetization access. Needs 1,000+ followers on Instagram, TikTok or YouTube,
-  15 eligible reels a month on 10 separate days. [High: creators.facebook.com/creator-fast-track]
-- Only for residents of the United States, Canada, United Kingdom or Australia. Creators living
-  anywhere else can't join. [High: same page]
+### Creator Fast Track (US, Canada, UK and Australia residents only)
+- Who: residents of the United States, Canada, United Kingdom or Australia, 18+, with a Facebook
+  account at least 30 days old and a Page. 1,000+ followers on Instagram, TikTok or YouTube with
+  5,000+ video views in the last 60 days (30,000+ if over 20,000 followers). Must NOT have posted 6
+  Facebook Reels in the past 180 days. Meta decides at its discretion. [High: creators.facebook.com/
+  creator-fast-track, read 2026-11-05]
+- What: Content Monetization access with no waitlist, kept after the 3-month program. The program
+  payment needs 15 eligible original Reels a month on 10 separate days: $0 at 1,000-19,999 followers,
+  $100-$450/month at 20,000-99,999, $1,000 at 100,000-999,999, $3,000 at 1M+. [High: same page]
+- Tip for users who qualify: apply BEFORE posting Reels on the new Page (the 6-Reels rule).
+- Creators living anywhere else (for example the UAE or the Philippines) can't join. [High: same page]
 
 ### Stars and Subscriptions
 - Stars: 500 followers for 30 consecutive days. Subscriptions: 5,000+ followers, age 18+.
@@ -64,6 +77,9 @@ careful secondary source citing the official page. [Low] single secondary source
 - AI content is not banned. Meta asks creators to use its AI label for photorealistic video or
   realistic-sounding audio that was digitally created or altered. [Low/Med: clippie.ai citing Meta;
   confirm in Meta Help during setup]
+- Meta's March 2026 originality post says nothing about AI-generated visuals, AI or cloned voices, AI
+  labels or watermarks. Treating our AI-made video as "produced directly" by the Page owner is our
+  reading, not a stated Meta rule. [High: about.fb.com 2026-03-13, re-read 2026-11-05]
 
 ### Your country
 - Meta publishes no Content Monetization country list. Your Professional Dashboard > Monetization tab
@@ -88,26 +104,68 @@ careful secondary source citing the official page. [Low] single secondary source
 
 ## YouTube
 
-### Partner Program (official, YouTube Help 72851)
-- Ad revenue sharing: "1,000 subscribers with 4,000 qualified watch hours in the last 12 months, or
-  1,000 subscribers with 10 million qualified Shorts views in the last 90 days." Shorts Feed watch
-  hours don't count toward the 4,000. Also needed: AdSense, 2-Step Verification, no active strikes,
-  live in an available country. Review "typically in about 1 month". [High]
-- Check your country on the YPP list (Help 7101720). Example: the UAE is listed. [High]
-- Lower tier (fan funding, Shopping): 500 subscribers, 3 public uploads in 90 days, and 3,000 watch
-  hours in 12 months or 3M Shorts views in 90 days. [Med: kineclip.com citing YouTube Help, 2026-08]
-- Coming change: from 1 Feb 2027 YouTube says Shorts ad and Premium revenue each month needs at least
-  10 million qualified Shorts views in the last 90 days, and creators must accept updated YPP terms by
-  31 Jan 2027. [High: Help 72851 and 12504220] Shorts-only income will need steady volume.
+### Partner Program (YouTube Help 72851, 12843009, 13429240; YouTube blog 2026-08-10)
+- Ads and Premium revenue, for applications up to 31 Jan 2027: "1,000 subscribers with 4,000 qualified
+  watch hours in the last 12 months, or 1,000 subscribers with 10 million qualified Shorts views in the
+  last 90 days." Shorts Feed watch hours don't count toward the 4,000. Also needed: AdSense, 2-Step
+  Verification, no active strikes, live in an available country. Review "typically in about 1 month". [High]
+- From 1 Feb 2027, new applicants need 1,000 subscribers plus 8,000 qualified watch hours in the last
+  365 days, or 20 million qualified Shorts views in the last 90 days. Channels already in YPP keep their
+  place. Every creator must accept the new terms in YouTube Studio by 31 Jan 2027. [High: blog.youtube
+  2026-08-10, Help 12843009] A page that starts now is unlikely to reach 10M Shorts views before
+  31 Jan 2027, so plan for the 2027 bar.
+- Also from 1 Feb 2027: a YPP channel earns Shorts ad and Premium revenue for a month only with at least
+  10M qualified Shorts views in the 90 days ending on the 15th of the previous month (about 3.3M a
+  month). Below that it stays in YPP and keeps long-form earnings; Shorts pay resumes by itself above
+  10M. Existing members are not exempt. [High: blog.youtube 2026-08-10, Help 12843009]
+- New activity rule, same date: a channel counts as active with 1,000 qualified watch hours in 365
+  days, or 1M qualified Shorts views in 90 days, or 2 long-form videos or 5 Shorts uploaded every 90
+  days. [High: same]
+- A qualified Shorts view is an engaged view of a public Short in the Shorts Feed. Loops don't count. [High]
+- Fan-funding tier (no ads): 500 subscribers, 3 public uploads in 90 days, and 3,000 qualified watch
+  hours in 12 months or 3M qualified Shorts views in 90 days. Unlocks memberships, Super Chat, Super
+  Stickers, Super Thanks and Shopping. Not changing in 2027. The UAE and the Philippines are on its
+  country list. [High: Help 13429240, 2026-11-05] Shopping affiliate is offered in the Philippines but
+  not to UAE-based channels. [Med: same page's country table, per the 2026-11-05 research run]
+- Check your country on the YPP list (Help 7101720). [High]
 
 ### Shorts revenue
 - Creators keep 45% of their allocated Shorts revenue. If a Short uses 1 licensed music track, half of
   the revenue tied to its views goes to the Creator Pool (the rest pays for music); 2 tracks, one third.
-  Compilations "with no original content added" are not eligible. [High: Help 12504220]
+  Compilations "with no original content added" are not eligible. [Med: Help 12504220 read in the
+  first pass on 2026-11-05; a second check the same day could not re-confirm the pool details, so
+  re-read the page before quoting the 45%]
+- Views on non-original Shorts don't count for revenue: unedited clips of others' movies or TV shows,
+  reuploads from YouTube or other platforms, compilations with no original content, bot views, and
+  Shorts that break the advertiser-friendly guidelines. [High: Help 12504220]
 - Shorts views earn far less than long-form views. No reliable public RPM figure was found; vendor
   pages say roughly an order of magnitude less. [Low]
 
-### Inauthentic content (monetization policy, renamed 15 July 2025)
+### Generic, repetitive and AI content (monetization policy, Help 1311392)
+- On 15 July 2025 YouTube renamed "repetitious content" to "inauthentic content". The live page now
+  groups these rules under "Generic or Repetitive Content" and "Unsatisfying or Off-putting Content".
+- Allowed: "using AI to visualize a unique character and narrative you invented", and a
+  recurring-character series "in which each video has a distinct storyline, focus, or concept".
+- Not monetizable: videos where "characters are put in the same situation over and over again with
+  the same outcome"; content that "feels interchangeable from video to video"; formats or stories
+  copied so closely that videos feel interchangeable; videos that "stitch together unrelated or
+  inconsistent AI clips to surprise or shock"; content without a clear narrative arc. Reviewers judge
+  the whole channel. The page has no rule on AI, text-to-speech or cloned voiceovers. [High, 2026-11-05]
+
+### AI personas and advice (Help 1311392, "AI Personas Related to Sensitive Topics")
+- A channel whose AI-generated persona presents itself as a human expert giving advice on health,
+  legal issues, finances or politics can't monetize. Examples on the page: an AI doctor, AI podcast
+  hosts giving financial guidance. The topic list is open-ended. [High, 2026-11-05]
+- For us: money, gambling or brain stories are fine as stories. The mascot never gives advice.
+
+### Reused content (Help 1311392)
+- Judged for the whole channel: "if we cannot clearly tell that you made the content", monetization
+  may be removed from the entire channel, even with the original creator's permission. Separate from
+  copyright. Not monetizable: short videos compiled from other social sites, and content that only
+  reads text you didn't write, such as websites or news feeds. [High, 2026-11-05]
+- For us: every script is our own writing. Never read sourced text aloud; no outside footage.
+
+### Inauthentic content (earlier wording, same page)
 - Content must "Not be mass-produced, generic, repetitive, or manipulative."
 - Not monetizable: "Image slideshows, templated storylines, or scrolling text with minimal or no
   narrative, commentary, or educational value" and "AI-generated content made with generic or
@@ -126,6 +184,11 @@ careful secondary source citing the official page. [Low] single secondary source
 - "Disclosing AI content alone won't limit a video's audience or impact its eligibility to earn money."
   Not disclosing when required can lead to labels, removal or YPP suspension. [High]
 - A preset AI narrator voice that isn't the creator's own isn't covered in either list. Disclose to be safe.
+- Photoreal reconstructions of real historical events or places probably need disclosure. [inference]
+- YouTube may still label videos made with its own AI tools, videos carrying C2PA metadata, or videos
+  its systems detect as AI. For animated content the label sits in the expanded description, and
+  C2PA-based labels can't be removed. The Studio setting is now called "AI use". [High, 2026-11-05]
+  Whether Flow exports carry C2PA metadata is unverified: check the first upload.
 
 ### Made for kids (Help 9528076)
 - Factors include "animated characters or cartoon figures" that appeal to children, but "Animated
@@ -142,12 +205,20 @@ careful secondary source citing the official page. [Low] single secondary source
 - Animate every still and tell a real story. No slideshow look.
 - Narrate with your own voice or a clone of your own voice: no YouTube disclosure needed.
 - No licensed music in Shorts. Our own or royalty-free tracks.
-- YouTube: grow to 1,000 subs + 10M Shorts views in 90 days. Add long-form compilations with new
-  narration to reach 4,000 watch hours as a second path.
-- Facebook: grow followers, express interest in Content Monetization, Stars at 500 followers.
+- YouTube: start the channel together with the Facebook Page, not later. First goal: 500 subs + 3M
+  Shorts views (fan funding). Ads: plan for the 2027 bar (1,000 subs + 20M Shorts views in 90 days, or
+  8,000 watch hours in a year), then 10M Shorts views every 90 days to keep Shorts pay. Long-form
+  compilations with new narration toward the watch-hour route are now a real second path.
+- Facebook: express interest in Content Monetization in week one. Every Reel 10 s or longer, with a
+  hook that holds viewers past 5 s. Stars at 500 followers.
+- The mascot never advises on health, law, money or politics. Scripts are always our own words, and
+  each episode has its own storyline and outcome.
+- Not verified anywhere yet: earnings per 1,000 views by country (Facebook or YouTube), the wait from
+  Facebook's interest form to an invite, and whether cross-posting the same video lowers reach.
 
 ## Sources
 - https://creators.facebook.com/tools/facebook-content-monetization
+- https://creators.facebook.com/blog/new-tips-to-help-you-earn-on-facebook-content-monetization
 - https://about.fb.com/news/2024/10/monetize-content-facebooks-new-streamlined-program/
 - https://about.fb.com/news/2026/03/creator-fast-track-grow-your-audience-earn-money-on-facebook/
 - https://creators.facebook.com/creator-fast-track
@@ -159,6 +230,10 @@ careful secondary source citing the official page. [Low] single secondary source
 - https://arynews.tv/facebook-lowers-monetization-threshold-for-new-creators (unverified report)
 - https://arabianmarketer.ae/facebook-launches-ad-breaks-in-uae-saudi-arabia-jordan/ (2018)
 - https://support.google.com/youtube/answer/72851
+- https://blog.youtube/news-and-events/youtube-partner-program-updates-2027-new-opportunities-earn/
+- https://support.google.com/youtube/answer/12843009
+- https://support.google.com/youtube/answer/13429240
+- https://support.google.com/youtube/answer/10008196 (policy changelog)
 - https://support.google.com/youtube/answer/7101720
 - https://support.google.com/youtube/answer/1311392
 - https://support.google.com/youtube/answer/14328491

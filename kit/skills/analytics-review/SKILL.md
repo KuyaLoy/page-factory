@@ -22,10 +22,13 @@ Save as pages/<slug>/analytics/YYYY-MM-DD.md with one table per platform.
 - Update topic scores in queue.csv and "What works" in page.md (dated).
 
 ## Monetization tracker
-- YouTube: subscribers and qualified Shorts views in the last 90 days (goal 10M), or watch hours for
-  long-form. From 1 Feb 2027 YouTube says Shorts ad revenue needs 10M qualified Shorts views in the last
-  90 days each month.
-- Facebook: Content Monetization status (invite-only), Stars (500 followers for 30 days).
+- YouTube: subscribers, qualified Shorts views in the last 90 days and long-form watch hours.
+  Goals: 500 subs + 3M Shorts views (fan funding). Ads: 1,000 subs + 10M Shorts views or 4,000 hours
+  until 31 Jan 2027; for new channels from 1 Feb 2027, 1,000 subs + 20M Shorts views or 8,000 hours.
+  Once in YPP from 1 Feb 2027: keep 10M qualified Shorts views per 90 days (counted to the 15th) for
+  Shorts pay.
+- Facebook: Content Monetization status (invite-only), then qualified views and Earnings Rate once
+  invited. Stars (500 followers for 30 days).
 - TikTok: what TikTok Studio > Monetization shows for the account.
 - When a page starts earning: suggest the paid upgrades in research/03-tools-and-stack.md
   ("Upgrade when you earn"), cheapest first, only where they save real time or lift quality.

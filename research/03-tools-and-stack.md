@@ -35,6 +35,12 @@ their job. New paid tools only after a page earns money.
 - Character references ("ingredients") work on Veo 3.1 Lite, Fast (8 s) and Omni. Flow is for users
   18+, available in many countries (check yours), and won't generate prominent people.
 - Watermarks: not stated on the help pages read. Check your first exports.
+- Costs are per generation, not per request: one request can return 2 videos. Set 1 output per request
+  unless you want two takes to choose from. [High: Flow Help 16526234, 16353334]
+- Veo costs the same for 4, 6 or 8 s clips (Quality is 8 s only), so 8 s gives the most footage per
+  credit when the shot can use it. [inference from the price table]
+- Google's own Flow pages disagree on which models can Extend, which lengths Quality supports and
+  whether some features need a paid plan. Check in the app. [High: Help 16352836 vs 16526234, 2026-11-05]
 
 ### Credit plan per video
 - All-motion (12 Veo Fast shots x 2 tries) = about 480 credits. Too much for any plan.
@@ -42,6 +48,8 @@ their job. New paid tools only after a page earns money.
   Flash or Veo 3.1 Lite x 2 tries = about 60-120 credits. Default budget 90.
 - Free tier: 50 a day is about 1,500 a month, so 4-5 videos a week fit if you spread generation across
   the week.
+- Google AI Pro: about 2,500 credits a month if the 50 daily credits are used every day (1,000 + 50 x 30).
+  The daily credits add more than the monthly bonus and don't roll over: generate something every day.
 
 ### HyperFrames (github.com/heygen-com/hyperframes)
 - "A free, open-source framework for turning HTML, CSS, media, and seekable animations into deterministic

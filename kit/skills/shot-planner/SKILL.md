@@ -22,6 +22,9 @@ Grok Imagine). Use the same shot list for any route; only the prompt format chan
 | Veo 3.1 Lite | 4-8 s | 10 | key motion moments, takes character references |
 | Veo 3.1 Fast | 4-8 s | 20 | when Lite isn't good enough |
 | Veo 3.1 Quality | 8 s | 100 | only for a proven topic's hero shot |
+- Credits are charged per generation, not per request. Set Flow to 1 output per request unless the
+  user wants two takes to choose from.
+- Veo costs the same for 4, 6 or 8 s, so ask for 8 s and trim when the shot can use the extra footage.
 
 ## Plan
 1. Split the script into shots of 3-5 seconds that follow the 5-beat timing: about 8 shots for 30 s,

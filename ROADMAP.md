@@ -2,11 +2,16 @@
 
 Ideas, not promises. Retros (prompts/retro.md) add to this list.
 
-## Next (v1.2)
+## Next (v1.3)
+- [ ] Own domain for the site: docs/CNAME, DNS records, Pages > Custom domain, HTTPS; update the
+      og:image link in docs-src/manual.src.html.
+- [ ] Link preview image (1200x630) for sharing the site on Facebook and X.
 - [ ] First real run: HQ setup + EP001-EP005 on Page #1, then a retro.
 - [ ] HyperFrames starter templates per format: caption styles, title cards, covers.
 - [ ] tools/check-tools.ps1 and check-tools.sh shipped in the kit and tested.
 - [ ] Verify TikTok monetization rules from official pages and update research/01.
+- [ ] Find dated, sourced earnings per 1,000 views (Facebook and YouTube, by viewer country) and the
+      usual wait from Facebook's interest form to an invite. None were verified on 2026-11-05.
 - [ ] Optional local-visuals route: tested ComfyUI workflows (FLUX.1 schnell stills, Wan clips).
 
 ## Soon
@@ -22,6 +27,10 @@ Ideas, not promises. Retros (prompts/retro.md) add to this list.
 - [ ] Translations of the manual.
 
 ## Done
+- [x] v1.2.1 (2026-11-05): research merge (YouTube 2027 thresholds, Facebook qualified views and Fast
+      Track rules, AI personas and reused-content rules, Flow per-generation credits).
+- [x] v1.2.0 (2026-11-05): hand-drawn zine landing page with motion, a live studio demo, command list
+      for the prompts, index-card FAQ, public-domain animation pictures with credits.
 - [x] v1.1.0 (2026-11-05): HQ master prompt downloads the kit and sets up everything incl. 5 platforms,
       studio.md, episode claims, one job per chat, free-first tools, 30-90 s videos, tutorial manual.
 - [x] v1.0.0 (2026-11-05): master prompt, 13 skills, templates, research, manual, update-kit and retro prompts.

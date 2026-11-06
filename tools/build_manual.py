@@ -6,20 +6,24 @@ Usage (from the kit root):
 
 Writes:
     docs/index.html      full page for GitHub Pages (Settings > Pages > main /docs)
+    docs/assets/         pictures and clips, copied from docs-src/assets/
     docs/.nojekyll       tells GitHub Pages to serve the files as they are
     build/artifact.html  page fragment for a Claude Artifact (no html/head/body tags)
+    build/assets/        the same pictures, next to the fragment
     kit/manifest.json    skills, prompts, templates, tools and modules, each with the
                          version it first shipped in ("since")
 """
 import html
 import json
 import re
+import shutil
 import sys
 from datetime import date
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
 SRC = ROOT / "docs-src" / "manual.src.html"
+ASSETS = ROOT / "docs-src" / "assets"
 VERSION = (ROOT / "VERSION").read_text(encoding="utf-8").strip()
 REPO = "https://github.com/KuyaLoy/page-factory"
 
@@ -73,6 +77,16 @@ def build_manual():
     (ROOT / "docs").mkdir(exist_ok=True)
     (ROOT / "docs" / "index.html").write_text(page, encoding="utf-8")
     (ROOT / "docs" / ".nojekyll").write_text("", encoding="utf-8")
+    copy_assets(ROOT / "docs" / "assets")
+    copy_assets(ROOT / "build" / "assets")
+
+
+def copy_assets(dest):
+    """Mirror docs-src/assets/ into dest, so removed pictures disappear there too."""
+    if dest.exists():
+        shutil.rmtree(dest)
+    if ASSETS.exists():
+        shutil.copytree(ASSETS, dest)
 
 
 def build_manifest():

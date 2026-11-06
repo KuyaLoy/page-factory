@@ -1,6 +1,8 @@
 # Page Factory kit repo
 .env
 *.mp4
+!docs/assets/*.mp4
+!docs-src/assets/*.mp4
 *.mov
 *.wav
 *.mp3
